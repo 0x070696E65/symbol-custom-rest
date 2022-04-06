@@ -20,18 +20,14 @@
 **/
 
 #pragma once
-#ifndef CUSTOM_ENTITY_TYPE_DEFINITION
-#include "catapult/model/EntityType.h"
+#include "catapult/plugins.h"
+#include <memory>
 
-namespace catapult { namespace model {
+namespace catapult { namespace model { class TransactionPlugin; } }
 
-#endif
+namespace catapult { namespace plugins {
 
-	/// Transfer transaction.
-	DEFINE_TRANSACTION_TYPE(Transfer, Transfer, 0x1);
-	//add Transferv
-	DEFINE_TRANSACTION_TYPE(Transfer, Transferv, 0x2);
-
-#ifndef CUSTOM_ENTITY_TYPE_DEFINITION
+	/// Creates a transfer transaction plugin.
+	PLUGIN_API
+	std::unique_ptr<model::TransactionPlugin> CreateTransfervTransactionPlugin();
 }}
-#endif
