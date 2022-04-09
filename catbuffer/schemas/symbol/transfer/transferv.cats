@@ -1,8 +1,8 @@
 import "transaction.cats"
 
 # Test PluginTransaction(copy of transfer)
-# Shared content between TsansfervTransaction and EmbeddedTsansfervTransaction.
-inline struct TsansfervTransactionBody
+# Shared content between TransfervTransaction and EmbeddedTransfervTransaction.
+inline struct TransfervTransactionBody
 	# recipient address
 	recipient_address = UnresolvedAddress
 
@@ -26,17 +26,17 @@ inline struct TsansfervTransactionBody
 	message = array(uint8, message_size)
 
 # Send mosaics and messages between two accounts.
-struct TsansfervTransaction
+struct TransfervTransaction
 	TRANSACTION_VERSION = make_const(uint8, 1)
 	TRANSACTION_TYPE = make_const(TransactionType, TRANSFERV)
 
 	inline Transaction
-	inline TsansfervTransactionBody
+	inline TransfervTransactionBody
 
-# Embedded version of TsansfervTransaction.
-struct EmbeddedTsansfervTransaction
+# Embedded version of TransfervTransaction.
+struct EmbeddedTransfervTransaction
 	TRANSACTION_VERSION = make_const(uint8, 1)
 	TRANSACTION_TYPE = make_const(TransactionType, TRANSFERV)
 
 	inline EmbeddedTransaction
-	inline TsansfervTransactionBody
+	inline TransfervTransactionBody

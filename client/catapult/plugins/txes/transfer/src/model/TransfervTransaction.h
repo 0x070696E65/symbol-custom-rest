@@ -20,7 +20,7 @@
 **/
 
 #pragma once
-#include "TransfervEntityType.h"
+#include "TransferEntityType.h"
 #include "catapult/model/Mosaic.h"
 #include "catapult/model/Transaction.h"
 
@@ -48,8 +48,8 @@ namespace catapult { namespace model {
 		uint8_t MosaicsCount;
 
 		/// Reserved padding to align Mosaics on 8-byte boundary.
-		uint32_t TransfervTransactionBody_Reserved1;
-		uint8_t TransfervTransactionBody_Reserved2;
+		uint32_t TransferTransactionBody_Reserved1;
+		uint8_t TransferTransactionBody_Reserved2;
 
 		// followed by mosaics data if MosaicsCount != 0
 		DEFINE_TRANSACTION_VARIABLE_DATA_ACCESSORS(Mosaics, UnresolvedMosaic)

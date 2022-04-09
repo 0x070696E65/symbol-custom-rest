@@ -32,7 +32,7 @@ namespace catapult { namespace plugins {
 	namespace {
 		template<typename TTransaction>
 		void Publish(const TTransaction& transaction, const PublishContext& context, NotificationSubscriber& sub) {
-			auto padding = transaction.TransfervTransactionBody_Reserved1 << 8 | transaction.TransfervTransactionBody_Reserved2;
+			auto padding = transaction.TransferTransactionBody_Reserved1 << 8 | transaction.TransferTransactionBody_Reserved2;
 			sub.notify(InternalPaddingNotification(padding));
 			sub.notify(AccountAddressNotification(transaction.RecipientAddress));
 			sub.notify(AddressInteractionNotification(context.SignerAddress, transaction.Type, { transaction.RecipientAddress }));

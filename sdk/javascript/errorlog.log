@@ -1,0 +1,11 @@
+2022-04-15 02:20:41.753350 0x00007f4ceeffd700: <warning> (ionet::PacketSocket.cpp@717) async_handshake returned an error: stream truncated
+2022-04-15 02:20:42.112883 0x00007f4d05ea2700: <info> (extensions::NetworkUtils.cpp@125) accept result to local node port 7900 from 127.0.0.1: Accepted
+2022-04-15 02:20:42.113393 0x00007f4ceffff700: <info> (ionet::PacketSocket.cpp@42) eof reading from socket: End of file
+2022-04-15 02:20:42.932283 0x00007f4d06ea4700: <info> (extensions::NetworkUtils.cpp@125) accept result to local node port 7900 from 127.0.0.1: Accepted
+2022-04-15 02:20:42.934000 0x00007f4d066a3700: <info> (ionet::PacketSocket.cpp@42) eof reading from socket: End of file
+2022-04-15 02:20:42.940472 0x00007f4cef7fe700: <info> (extensions::NetworkUtils.cpp@125) accept result to local node port 7900 from 127.0.0.1: Accepted
+2022-04-15 02:20:42.941095 0x00007f4d04ea0700: <info> (ionet::PacketSocket.cpp@42) eof reading from socket: End of file
+2022-04-15 02:20:43.455392 0x00007f4d05ea2700: <warning> (model::Transaction.cpp@32) rejected transaction with type: EntityType<0x4156>
+2022-04-15 02:20:43.455460 0x00007f4d05ea2700: <warning> (model::Transaction.cpp@51) EntityType<0x4156> transaction failed size validation with size 160
+2022-04-15 02:20:43.455468 0x00007f4d05ea2700: <warning> (ionet::PacketPayloadParser.h@35) entity (header size = 128) has failed validity check with size 160
+2022-04-15 02:20:43.455480 0x00007f4d05ea2700: <warning> (handlers::HandlerUtils.h@71) rejecting empty range: packet Push_Transactions with size 168
