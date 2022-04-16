@@ -17,7 +17,7 @@ const eadj = 1637848847;
 const deadline = BigInt(now - eadj*1000 + 60*60*5*1000)
 
 const transaction = facade.transactionFactory.create({
-    type: 'transfer_transaction',
+    type: 'transferv_transaction',
     signerPublicKey: 'CBCBFCD07813A55368AE02E36A8C8D016D50D8DEE5C34BC4D805E8873EC93073',
     fee: 100000n,
     deadline: deadline,
@@ -34,7 +34,7 @@ console.log(signature)
 console.log(facade.verifyTransaction(transaction,signature))
 const jsonPayload = facade.transactionFactory.constructor.attachSignature(transaction, signature);
 console.log(jsonPayload);
-//anounceTX(JSON.parse(jsonPayload).payload);
+anounceTX(JSON.parse(jsonPayload).payload);
 console.log(JSON.parse(jsonPayload).payload.length/2)
 const payload = stringToUint8Array(JSON.parse(jsonPayload).payload);
 console.log(payload.slice(0,100))
@@ -49,7 +49,7 @@ hasher.update(pub);
 hasher.update(gene);
 hasher.update(tx);
 const hash = new Uint8Array(hasher.arrayBuffer())
-console.log(uint8ToString(hash))
+console.log("http://154.12.242.37:3000/transactionStatus/"+uint8ToString(hash))
 
 function stringToUint8Array(str){
   const buf = Buffer.from(str,"hex");
