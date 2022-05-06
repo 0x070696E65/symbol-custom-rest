@@ -91,7 +91,7 @@ def create_docker_run_command(options, prepare_replacements):
 		# assume paths are relative to workdir
 		f'--compiler-configuration={inner_configuration_path}/{get_base_from_path(prepare_replacements["compiler_configuration_filepath"])}',
 		f'--build-configuration={inner_configuration_path}/{get_base_from_path(prepare_replacements["build_configuration_filepath"])}',
-		'--source-path=/catapult-src/client/catapult',
+		'--source-path=/catapult-src',
 		'--out-dir=/binaries'
 	]
 
@@ -196,7 +196,7 @@ def main():
 	environment_manager.chdir(OUTPUT_DIR)
 
 	for folder_name in ['scripts', 'seed', 'resources']:
-		environment_manager.copy_tree_with_symlinks(source_path / 'client/catapult' / folder_name, folder_name)
+		environment_manager.copy_tree_with_symlinks(source_path / '' / folder_name, folder_name)
 
 	environment_manager.chdir(source_path)
 
