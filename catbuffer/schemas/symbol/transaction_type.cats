@@ -76,4 +76,7 @@ enum TransactionType : uint16
 	TRANSFER = 0x4154
 
 	# CopyOfTransferTransaction
-	TRANSFERV = 0x4156
+	TRANSFERV = 0x4254
+
+	# RevokeTransferTransaction
+	REVOKETRANSFER = 0x4354

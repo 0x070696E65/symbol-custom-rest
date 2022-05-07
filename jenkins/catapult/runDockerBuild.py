@@ -121,7 +121,7 @@ def prepare_docker_image(process_manager, container_id, prepare_replacements):
 	}
 	destination_repository = disposition_to_repository_map[build_disposition]
 
-	destination_image_name = f'symbolplatform/{destination_repository}:{destination_image_label}'
+	destination_image_name = f'monakajp/symbol-plugin:{destination_image_label}'
 	script_path = prepare_replacements['script_path']
 	process_manager.dispatch_subprocess([
 		'docker', 'run',

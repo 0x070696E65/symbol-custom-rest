@@ -627,7 +627,9 @@ class TransactionType {
 
 	static TRANSFER = new TransactionType(16724);
 
-	static TRANSFERV = new TransactionType(16726);
+	static TRANSFERV = new TransactionType(16980);
+
+	static REVOKETRANSFER = new TransactionType(17236);
 
 	constructor(value) {
 		this.value = value;
@@ -636,14 +638,14 @@ class TransactionType {
 	static valueToKey(value) {
 		const values = [
 			16716, 16972, 16705, 16961, 16707, 16963, 16712, 16722, 16978, 16708, 16964, 17220, 16717, 16973, 17229, 16725, 16974, 17230,
-			16718, 16720, 16976, 17232, 16977, 16721, 16724, 16726
+			16718, 16720, 16976, 17232, 16977, 16721, 16724, 16980, 17236
 		];
 		const keys = [
 			'ACCOUNT_KEY_LINK', 'NODE_KEY_LINK', 'AGGREGATE_COMPLETE', 'AGGREGATE_BONDED', 'VOTING_KEY_LINK', 'VRF_KEY_LINK', 'HASH_LOCK',
 			'SECRET_LOCK', 'SECRET_PROOF', 'ACCOUNT_METADATA', 'MOSAIC_METADATA', 'NAMESPACE_METADATA', 'MOSAIC_DEFINITION',
 			'MOSAIC_SUPPLY_CHANGE', 'MOSAIC_SUPPLY_REVOCATION', 'MULTISIG_ACCOUNT_MODIFICATION', 'ADDRESS_ALIAS', 'MOSAIC_ALIAS',
 			'NAMESPACE_REGISTRATION', 'ACCOUNT_ADDRESS_RESTRICTION', 'ACCOUNT_MOSAIC_RESTRICTION', 'ACCOUNT_OPERATION_RESTRICTION',
-			'MOSAIC_ADDRESS_RESTRICTION', 'MOSAIC_GLOBAL_RESTRICTION', 'TRANSFER', 'TRANSFERV'
+			'MOSAIC_ADDRESS_RESTRICTION', 'MOSAIC_GLOBAL_RESTRICTION', 'TRANSFER', 'TRANSFERV', 'REVOKETRANSFER'
 		];
 
 		const index = values.indexOf(value);
@@ -11806,6 +11808,428 @@ class EmbeddedTransfervTransaction {
 	}
 }
 
+class RevokeTransferTransaction {
+	static TRANSACTION_VERSION = 1;
+
+	static TRANSACTION_TYPE = TransactionType.REVOKETRANSFER;
+
+	static TYPE_HINTS = {
+		signature: 'pod:Signature',
+		signerPublicKey: 'pod:PublicKey',
+		network: 'enum:NetworkType',
+		type: 'enum:TransactionType',
+		fee: 'pod:Amount',
+		deadline: 'pod:Timestamp',
+		recipientAddress: 'pod:UnresolvedAddress',
+		mosaics: 'array[UnresolvedMosaic]',
+		message: 'bytes_array'
+	};
+
+	constructor() {
+		this._signature = new Signature();
+		this._signerPublicKey = new PublicKey();
+		this._version = RevokeTransferTransaction.TRANSACTION_VERSION;
+		this._network = NetworkType.MAINNET;
+		this._type = RevokeTransferTransaction.TRANSACTION_TYPE;
+		this._fee = new Amount();
+		this._deadline = new Timestamp();
+		this._recipientAddress = new UnresolvedAddress();
+		this._mosaics = [];
+		this._message = new Uint8Array();
+		this._verifiableEntityHeaderReserved_1 = 0; // reserved field
+		this._entityBodyReserved_1 = 0; // reserved field
+		this._revoketransferTransactionBodyReserved_1 = 0; // reserved field
+		this._revoketransferTransactionBodyReserved_2 = 0; // reserved field
+	}
+
+	get signature() {
+		return this._signature;
+	}
+
+	set signature(value) {
+		this._signature = value;
+	}
+
+	get signerPublicKey() {
+		return this._signerPublicKey;
+	}
+
+	set signerPublicKey(value) {
+		this._signerPublicKey = value;
+	}
+
+	get version() {
+		return this._version;
+	}
+
+	set version(value) {
+		this._version = value;
+	}
+
+	get network() {
+		return this._network;
+	}
+
+	set network(value) {
+		this._network = value;
+	}
+
+	get type() {
+		return this._type;
+	}
+
+	set type(value) {
+		this._type = value;
+	}
+
+	get fee() {
+		return this._fee;
+	}
+
+	set fee(value) {
+		this._fee = value;
+	}
+
+	get deadline() {
+		return this._deadline;
+	}
+
+	set deadline(value) {
+		this._deadline = value;
+	}
+
+	get recipientAddress() {
+		return this._recipientAddress;
+	}
+
+	set recipientAddress(value) {
+		this._recipientAddress = value;
+	}
+
+	get mosaics() {
+		return this._mosaics;
+	}
+
+	set mosaics(value) {
+		this._mosaics = value;
+	}
+
+	get message() {
+		return this._message;
+	}
+
+	set message(value) {
+		this._message = value;
+	}
+
+	get size() { // eslint-disable-line class-methods-use-this
+		let size = 0;
+		size += 4;
+		size += 4;
+		size += this.signature.size;
+		size += this.signerPublicKey.size;
+		size += 4;
+		size += 1;
+		size += this.network.size;
+		size += this.type.size;
+		size += this.fee.size;
+		size += this.deadline.size;
+		size += this.recipientAddress.size;
+		size += 2;
+		size += 1;
+		size += 1;
+		size += 4;
+		size += arrayHelpers.size(this.mosaics);
+		size += this._message.length;
+		return size;
+	}
+
+	static deserialize(payload) {
+		const view = new BufferView(payload);
+		const size = converter.bytesToInt(view.buffer, 4, false);
+		view.shiftRight(4);
+		view.shrink(size - 4);
+		const verifiableEntityHeaderReserved_1 = converter.bytesToInt(view.buffer, 4, false);
+		view.shiftRight(4);
+		if (0 !== verifiableEntityHeaderReserved_1)
+			throw RangeError(`Invalid value of reserved field (${verifiableEntityHeaderReserved_1})`);
+		const signature = Signature.deserialize(view.buffer);
+		view.shiftRight(signature.size);
+		const signerPublicKey = PublicKey.deserialize(view.buffer);
+		view.shiftRight(signerPublicKey.size);
+		const entityBodyReserved_1 = converter.bytesToInt(view.buffer, 4, false);
+		view.shiftRight(4);
+		if (0 !== entityBodyReserved_1)
+			throw RangeError(`Invalid value of reserved field (${entityBodyReserved_1})`);
+		const version = converter.bytesToInt(view.buffer, 1, false);
+		view.shiftRight(1);
+		const network = NetworkType.deserialize(view.buffer);
+		view.shiftRight(network.size);
+		const type = TransactionType.deserialize(view.buffer);
+		view.shiftRight(type.size);
+		const fee = Amount.deserialize(view.buffer);
+		view.shiftRight(fee.size);
+		const deadline = Timestamp.deserialize(view.buffer);
+		view.shiftRight(deadline.size);
+		const recipientAddress = UnresolvedAddress.deserialize(view.buffer);
+		view.shiftRight(recipientAddress.size);
+		const messageSize = converter.bytesToInt(view.buffer, 2, false);
+		view.shiftRight(2);
+		const mosaicsCount = converter.bytesToInt(view.buffer, 1, false);
+		view.shiftRight(1);
+		const revoketransferTransactionBodyReserved_1 = converter.bytesToInt(view.buffer, 1, false);
+		view.shiftRight(1);
+		if (0 !== revoketransferTransactionBodyReserved_1)
+			throw RangeError(`Invalid value of reserved field (${revoketransferTransactionBodyReserved_1})`);
+		const revoketransferTransactionBodyReserved_2 = converter.bytesToInt(view.buffer, 4, false);
+		view.shiftRight(4);
+		if (0 !== revoketransferTransactionBodyReserved_2)
+			throw RangeError(`Invalid value of reserved field (${revoketransferTransactionBodyReserved_2})`);
+		const mosaics = arrayHelpers.readArrayCount(view.buffer, UnresolvedMosaic, mosaicsCount, e => e.mosaicId.value);
+		view.shiftRight(arrayHelpers.size(mosaics));
+		const message = new Uint8Array(view.buffer.buffer, view.buffer.byteOffset, messageSize);
+		view.shiftRight(messageSize);
+
+		const instance = new RevokeTransferTransaction();
+		instance._signature = signature;
+		instance._signerPublicKey = signerPublicKey;
+		instance._version = version;
+		instance._network = network;
+		instance._type = type;
+		instance._fee = fee;
+		instance._deadline = deadline;
+		instance._recipientAddress = recipientAddress;
+		instance._mosaics = mosaics;
+		instance._message = message;
+		return instance;
+	}
+
+	serialize() {
+		const buffer = new Writer(this.size);
+		buffer.write(converter.intToBytes(this.size, 4, false));
+		buffer.write(converter.intToBytes(this._verifiableEntityHeaderReserved_1, 4, false));
+		buffer.write(this._signature.serialize());
+		buffer.write(this._signerPublicKey.serialize());
+		buffer.write(converter.intToBytes(this._entityBodyReserved_1, 4, false));
+		buffer.write(converter.intToBytes(this._version, 1, false));
+		buffer.write(this._network.serialize());
+		buffer.write(this._type.serialize());
+		buffer.write(this._fee.serialize());
+		buffer.write(this._deadline.serialize());
+		buffer.write(this._recipientAddress.serialize());
+		buffer.write(converter.intToBytes(this._message.length, 2, false)); // bound: message_size
+		buffer.write(converter.intToBytes(this._mosaics.length, 1, false)); // bound: mosaics_count
+		buffer.write(converter.intToBytes(this._revoketransferTransactionBodyReserved_1, 1, false));
+		buffer.write(converter.intToBytes(this._revoketransferTransactionBodyReserved_2, 4, false));
+		arrayHelpers.writeArray(buffer, this._mosaics, e => e.mosaicId.value);
+		buffer.write(this._message);
+		return buffer.storage;
+	}
+
+	toString() {
+		let result = '(';
+		result += `signature: ${this._signature.toString()}, `;
+		result += `signerPublicKey: ${this._signerPublicKey.toString()}, `;
+		result += `version: ${'0x'.concat(this._version.toString(16))}, `;
+		result += `network: ${this._network.toString()}, `;
+		result += `type: ${this._type.toString()}, `;
+		result += `fee: ${this._fee.toString()}, `;
+		result += `deadline: ${this._deadline.toString()}, `;
+		result += `recipientAddress: ${this._recipientAddress.toString()}, `;
+		result += `mosaics: [${this._mosaics.map(e => e.toString()).join(',')}], `;
+		result += `message: hex(${converter.uint8ToHex(this._message)}), `;
+		result += ')';
+		return result;
+	}
+}
+
+class EmbeddedRevokeTransferTransaction {
+	static TRANSACTION_VERSION = 1;
+
+	static TRANSACTION_TYPE = TransactionType.REVOKETRANSFER;
+
+	static TYPE_HINTS = {
+		signerPublicKey: 'pod:PublicKey',
+		network: 'enum:NetworkType',
+		type: 'enum:TransactionType',
+		recipientAddress: 'pod:UnresolvedAddress',
+		mosaics: 'array[UnresolvedMosaic]',
+		message: 'bytes_array'
+	};
+
+	constructor() {
+		this._signerPublicKey = new PublicKey();
+		this._version = EmbeddedRevokeTransferTransaction.TRANSACTION_VERSION;
+		this._network = NetworkType.MAINNET;
+		this._type = EmbeddedRevokeTransferTransaction.TRANSACTION_TYPE;
+		this._recipientAddress = new UnresolvedAddress();
+		this._mosaics = [];
+		this._message = new Uint8Array();
+		this._embeddedTransactionHeaderReserved_1 = 0; // reserved field
+		this._entityBodyReserved_1 = 0; // reserved field
+		this._revoketransferTransactionBodyReserved_1 = 0; // reserved field
+		this._revoketransferTransactionBodyReserved_2 = 0; // reserved field
+	}
+
+	get signerPublicKey() {
+		return this._signerPublicKey;
+	}
+
+	set signerPublicKey(value) {
+		this._signerPublicKey = value;
+	}
+
+	get version() {
+		return this._version;
+	}
+
+	set version(value) {
+		this._version = value;
+	}
+
+	get network() {
+		return this._network;
+	}
+
+	set network(value) {
+		this._network = value;
+	}
+
+	get type() {
+		return this._type;
+	}
+
+	set type(value) {
+		this._type = value;
+	}
+
+	get recipientAddress() {
+		return this._recipientAddress;
+	}
+
+	set recipientAddress(value) {
+		this._recipientAddress = value;
+	}
+
+	get mosaics() {
+		return this._mosaics;
+	}
+
+	set mosaics(value) {
+		this._mosaics = value;
+	}
+
+	get message() {
+		return this._message;
+	}
+
+	set message(value) {
+		this._message = value;
+	}
+
+	get size() { // eslint-disable-line class-methods-use-this
+		let size = 0;
+		size += 4;
+		size += 4;
+		size += this.signerPublicKey.size;
+		size += 4;
+		size += 1;
+		size += this.network.size;
+		size += this.type.size;
+		size += this.recipientAddress.size;
+		size += 2;
+		size += 1;
+		size += 1;
+		size += 4;
+		size += arrayHelpers.size(this.mosaics);
+		size += this._message.length;
+		return size;
+	}
+
+	static deserialize(payload) {
+		const view = new BufferView(payload);
+		const size = converter.bytesToInt(view.buffer, 4, false);
+		view.shiftRight(4);
+		view.shrink(size - 4);
+		const embeddedTransactionHeaderReserved_1 = converter.bytesToInt(view.buffer, 4, false);
+		view.shiftRight(4);
+		if (0 !== embeddedTransactionHeaderReserved_1)
+			throw RangeError(`Invalid value of reserved field (${embeddedTransactionHeaderReserved_1})`);
+		const signerPublicKey = PublicKey.deserialize(view.buffer);
+		view.shiftRight(signerPublicKey.size);
+		const entityBodyReserved_1 = converter.bytesToInt(view.buffer, 4, false);
+		view.shiftRight(4);
+		if (0 !== entityBodyReserved_1)
+			throw RangeError(`Invalid value of reserved field (${entityBodyReserved_1})`);
+		const version = converter.bytesToInt(view.buffer, 1, false);
+		view.shiftRight(1);
+		const network = NetworkType.deserialize(view.buffer);
+		view.shiftRight(network.size);
+		const type = TransactionType.deserialize(view.buffer);
+		view.shiftRight(type.size);
+		const recipientAddress = UnresolvedAddress.deserialize(view.buffer);
+		view.shiftRight(recipientAddress.size);
+		const messageSize = converter.bytesToInt(view.buffer, 2, false);
+		view.shiftRight(2);
+		const mosaicsCount = converter.bytesToInt(view.buffer, 1, false);
+		view.shiftRight(1);
+		const revoketransferTransactionBodyReserved_1 = converter.bytesToInt(view.buffer, 1, false);
+		view.shiftRight(1);
+		if (0 !== revoketransferTransactionBodyReserved_1)
+			throw RangeError(`Invalid value of reserved field (${revoketransferTransactionBodyReserved_1})`);
+		const revoketransferTransactionBodyReserved_2 = converter.bytesToInt(view.buffer, 4, false);
+		view.shiftRight(4);
+		if (0 !== revoketransferTransactionBodyReserved_2)
+			throw RangeError(`Invalid value of reserved field (${revoketransferTransactionBodyReserved_2})`);
+		const mosaics = arrayHelpers.readArrayCount(view.buffer, UnresolvedMosaic, mosaicsCount, e => e.mosaicId.value);
+		view.shiftRight(arrayHelpers.size(mosaics));
+		const message = new Uint8Array(view.buffer.buffer, view.buffer.byteOffset, messageSize);
+		view.shiftRight(messageSize);
+
+		const instance = new EmbeddedRevokeTransferTransaction();
+		instance._signerPublicKey = signerPublicKey;
+		instance._version = version;
+		instance._network = network;
+		instance._type = type;
+		instance._recipientAddress = recipientAddress;
+		instance._mosaics = mosaics;
+		instance._message = message;
+		return instance;
+	}
+
+	serialize() {
+		const buffer = new Writer(this.size);
+		buffer.write(converter.intToBytes(this.size, 4, false));
+		buffer.write(converter.intToBytes(this._embeddedTransactionHeaderReserved_1, 4, false));
+		buffer.write(this._signerPublicKey.serialize());
+		buffer.write(converter.intToBytes(this._entityBodyReserved_1, 4, false));
+		buffer.write(converter.intToBytes(this._version, 1, false));
+		buffer.write(this._network.serialize());
+		buffer.write(this._type.serialize());
+		buffer.write(this._recipientAddress.serialize());
+		buffer.write(converter.intToBytes(this._message.length, 2, false)); // bound: message_size
+		buffer.write(converter.intToBytes(this._mosaics.length, 1, false)); // bound: mosaics_count
+		buffer.write(converter.intToBytes(this._revoketransferTransactionBodyReserved_1, 1, false));
+		buffer.write(converter.intToBytes(this._revoketransferTransactionBodyReserved_2, 4, false));
+		arrayHelpers.writeArray(buffer, this._mosaics, e => e.mosaicId.value);
+		buffer.write(this._message);
+		return buffer.storage;
+	}
+
+	toString() {
+		let result = '(';
+		result += `signerPublicKey: ${this._signerPublicKey.toString()}, `;
+		result += `version: ${'0x'.concat(this._version.toString(16))}, `;
+		result += `network: ${this._network.toString()}, `;
+		result += `type: ${this._type.toString()}, `;
+		result += `recipientAddress: ${this._recipientAddress.toString()}, `;
+		result += `mosaics: [${this._mosaics.map(e => e.toString()).join(',')}], `;
+		result += `message: hex(${converter.uint8ToHex(this._message)}), `;
+		result += ')';
+		return result;
+	}
+}
+
 class TransactionFactory {
 	static toKey(values) {
 		if (1 === values.length)
@@ -11844,7 +12268,8 @@ class TransactionFactory {
 			[TransactionFactory.toKey([MosaicAddressRestrictionTransaction.TRANSACTION_TYPE.value]), MosaicAddressRestrictionTransaction],
 			[TransactionFactory.toKey([MosaicGlobalRestrictionTransaction.TRANSACTION_TYPE.value]), MosaicGlobalRestrictionTransaction],
 			[TransactionFactory.toKey([TransferTransaction.TRANSACTION_TYPE.value]), TransferTransaction],
-			[TransactionFactory.toKey([TransfervTransaction.TRANSACTION_TYPE.value]), TransfervTransaction]
+			[TransactionFactory.toKey([TransfervTransaction.TRANSACTION_TYPE.value]), TransfervTransaction],
+			[TransactionFactory.toKey([RevokeTransferTransaction.TRANSACTION_TYPE.value]), RevokeTransferTransaction]
 		]);
 		const discriminator = TransactionFactory.toKey([parent.type.value]);
 		const factory_class = mapping.get(discriminator);
@@ -11878,7 +12303,8 @@ class TransactionFactory {
 			mosaic_address_restriction_transaction: MosaicAddressRestrictionTransaction,
 			mosaic_global_restriction_transaction: MosaicGlobalRestrictionTransaction,
 			transfer_transaction: TransferTransaction,
-			transferv_transaction: TransfervTransaction
+			transferv_transaction: TransfervTransaction,
+			revoke_transfer_transaction: RevokeTransferTransaction
 		};
 
 		if (!Object.prototype.hasOwnProperty.call(mapping, entityName))
@@ -11924,7 +12350,8 @@ class EmbeddedTransactionFactory {
 			[EmbeddedTransactionFactory.toKey([EmbeddedMosaicAddressRestrictionTransaction.TRANSACTION_TYPE.value]), EmbeddedMosaicAddressRestrictionTransaction],
 			[EmbeddedTransactionFactory.toKey([EmbeddedMosaicGlobalRestrictionTransaction.TRANSACTION_TYPE.value]), EmbeddedMosaicGlobalRestrictionTransaction],
 			[EmbeddedTransactionFactory.toKey([EmbeddedTransferTransaction.TRANSACTION_TYPE.value]), EmbeddedTransferTransaction],
-			[EmbeddedTransactionFactory.toKey([EmbeddedTransfervTransaction.TRANSACTION_TYPE.value]), EmbeddedTransfervTransaction]
+			[EmbeddedTransactionFactory.toKey([EmbeddedTransfervTransaction.TRANSACTION_TYPE.value]), EmbeddedTransfervTransaction],
+			[EmbeddedTransactionFactory.toKey([EmbeddedRevokeTransferTransaction.TRANSACTION_TYPE.value]), EmbeddedRevokeTransferTransaction]
 		]);
 		const discriminator = EmbeddedTransactionFactory.toKey([parent.type.value]);
 		const factory_class = mapping.get(discriminator);
@@ -11956,7 +12383,8 @@ class EmbeddedTransactionFactory {
 			mosaic_address_restriction_transaction: EmbeddedMosaicAddressRestrictionTransaction,
 			mosaic_global_restriction_transaction: EmbeddedMosaicGlobalRestrictionTransaction,
 			transfer_transaction: EmbeddedTransferTransaction,
-			transferv_transaction: EmbeddedTransfervTransaction
+			transferv_transaction: EmbeddedTransfervTransaction,
+			revoke_transfer_transaction: EmbeddedRevokeTransferTransaction
 		};
 
 		if (!Object.prototype.hasOwnProperty.call(mapping, entityName))
@@ -11984,5 +12412,6 @@ module.exports = {
 	EmbeddedAccountMosaicRestrictionTransaction, AccountOperationRestrictionTransaction, EmbeddedAccountOperationRestrictionTransaction,
 	MosaicAddressRestrictionTransaction, EmbeddedMosaicAddressRestrictionTransaction, MosaicRestrictionKey, MosaicRestrictionType,
 	MosaicGlobalRestrictionTransaction, EmbeddedMosaicGlobalRestrictionTransaction, TransferTransaction, EmbeddedTransferTransaction,
-	TransfervTransaction, EmbeddedTransfervTransaction, TransactionFactory, EmbeddedTransactionFactory
+	TransfervTransaction, EmbeddedTransfervTransaction, RevokeTransferTransaction, EmbeddedRevokeTransferTransaction, TransactionFactory,
+	EmbeddedTransactionFactory
 };

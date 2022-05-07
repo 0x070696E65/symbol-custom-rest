@@ -30,12 +30,14 @@
 #include "catapult/model/Address.h"
 #include "catapult/plugins/PluginManager.h"
 #include "TransfervTransactionPlugin.h"
+#include "RevokeTransferTransactionPlugin.h"
 
 namespace catapult { namespace plugins {
 
 	void RegisterTransferSubsystem(PluginManager& manager) {
 		manager.addTransactionSupport(CreateTransferTransactionPlugin());
 		manager.addTransactionSupport(CreateTransfervTransactionPlugin());
+		manager.addTransactionSupport(CreateRevokeTransferTransactionPlugin());
 
 		auto config = model::LoadPluginConfiguration<config::TransferConfiguration>(manager.config(), "catapult.plugins.transfer");
 		manager.addStatelessValidatorHook([config](auto& builder) {
