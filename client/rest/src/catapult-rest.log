@@ -1,0 +1,808 @@
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-03T18:06:20.402Z'
+}
+{
+  error: AssertionError [ERR_ASSERTION]: data (buffer) is required
+      at Object.PrivateKey.parse [as parsePrivateKey] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/sshpk/lib/private-key.js:174:10)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/index.js:165:28
+      at Object.<anonymous> (/home/azureuser/catapult/catapult-client/client/rest/src/index.js:212:3)
+      at Module._compile (node:internal/modules/cjs/loader:1126:14)
+      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1180:10)
+      at Module.load (node:internal/modules/cjs/loader:1004:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+      at node:internal/main/run_main_module:17:47 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'buffer',
+    operator: 'Buffer.isBuffer'
+  },
+  level: 'error',
+  message: 'uncaughtException: data (buffer) is required\n' +
+    'AssertionError [ERR_ASSERTION]: data (buffer) is required\n' +
+    '    at Object.PrivateKey.parse [as parsePrivateKey] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/sshpk/lib/private-key.js:174:10)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/index.js:165:28\n' +
+    '    at Object.<anonymous> (/home/azureuser/catapult/catapult-client/client/rest/src/index.js:212:3)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1126:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1180:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1004:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:839:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  stack: 'AssertionError [ERR_ASSERTION]: data (buffer) is required\n' +
+    '    at Object.PrivateKey.parse [as parsePrivateKey] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/sshpk/lib/private-key.js:174:10)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/index.js:165:28\n' +
+    '    at Object.<anonymous> (/home/azureuser/catapult/catapult-client/client/rest/src/index.js:212:3)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1126:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1180:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1004:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:839:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  exception: true,
+  date: 'Mon Oct 03 2022 18:06:20 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 3685681,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 79286272,
+      heapTotal: 36503552,
+      heapUsed: 24565520,
+      external: 24109745,
+      arrayBuffers: 18773095
+    }
+  },
+  os: { loadavg: [ 4.23, 3.36, 2.08 ], uptime: 1392291.91 },
+  trace: [
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/sshpk/lib/private-key.js',
+      function: 'Object.PrivateKey.parse [as parsePrivateKey]',
+      line: 174,
+      method: 'parse [as parsePrivateKey]',
+      native: false
+    },
+    {
+      column: 28,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/index.js',
+      function: null,
+      line: 165,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/index.js',
+      function: null,
+      line: 212,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1126,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1180,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1004,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 839,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 81,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 17,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2022-10-03T18:06:20.409Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-03T18:15:16.327Z'
+}
+{
+  error: AssertionError [ERR_ASSERTION]: data (buffer) is required
+      at Object.PrivateKey.parse [as parsePrivateKey] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/sshpk/lib/private-key.js:174:10)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/index.js:165:28
+      at Object.<anonymous> (/home/azureuser/catapult/catapult-client/client/rest/src/index.js:212:3)
+      at Module._compile (node:internal/modules/cjs/loader:1126:14)
+      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1180:10)
+      at Module.load (node:internal/modules/cjs/loader:1004:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+      at node:internal/main/run_main_module:17:47 {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'buffer',
+    operator: 'Buffer.isBuffer'
+  },
+  level: 'error',
+  message: 'uncaughtException: data (buffer) is required\n' +
+    'AssertionError [ERR_ASSERTION]: data (buffer) is required\n' +
+    '    at Object.PrivateKey.parse [as parsePrivateKey] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/sshpk/lib/private-key.js:174:10)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/index.js:165:28\n' +
+    '    at Object.<anonymous> (/home/azureuser/catapult/catapult-client/client/rest/src/index.js:212:3)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1126:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1180:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1004:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:839:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  stack: 'AssertionError [ERR_ASSERTION]: data (buffer) is required\n' +
+    '    at Object.PrivateKey.parse [as parsePrivateKey] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/sshpk/lib/private-key.js:174:10)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/index.js:165:28\n' +
+    '    at Object.<anonymous> (/home/azureuser/catapult/catapult-client/client/rest/src/index.js:212:3)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1126:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1180:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1004:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:839:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  exception: true,
+  date: 'Mon Oct 03 2022 18:15:16 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 3688182,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 81227776,
+      heapTotal: 36765696,
+      heapUsed: 23608384,
+      external: 24109745,
+      arrayBuffers: 18640605
+    }
+  },
+  os: { loadavg: [ 0.98, 1.28, 1.55 ], uptime: 1392827.83 },
+  trace: [
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/sshpk/lib/private-key.js',
+      function: 'Object.PrivateKey.parse [as parsePrivateKey]',
+      line: 174,
+      method: 'parse [as parsePrivateKey]',
+      native: false
+    },
+    {
+      column: 28,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/index.js',
+      function: null,
+      line: 165,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/index.js',
+      function: null,
+      line: 212,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1126,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1180,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1004,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 839,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 81,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 17,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2022-10-03T18:15:16.330Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-03T18:18:07.659Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-03T18:18:07.660Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-03T18:18:07.692Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-03T18:18:07.694Z'
+}
+{
+  level: 'error',
+  message: "rest server is exiting due to error plugin 'content' not supported by model system",
+  stack: "Error: plugin 'content' not supported by model system\n" +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/catapult-sdk/plugins/catapultModelSystem.js:78:11\n' +
+    '    at Array.forEach (<anonymous>)\n' +
+    '    at Object.configure (/home/azureuser/catapult/catapult-client/client/rest/src/catapult-sdk/plugins/catapultModelSystem.js:76:15)\n' +
+    '    at createServer (/home/azureuser/catapult/catapult-client/client/rest/src/index.js:111:59)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/index.js:190:27\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  timestamp: '2022-10-03T18:18:07.699Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-03T18:25:18.792Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-03T18:25:18.792Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-03T18:25:18.825Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-03T18:25:18.826Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-03T18:25:18.831Z'
+}
+{
+  level: 'error',
+  message: "rest server is exiting due to error plugin 'content' not supported by route system",
+  stack: "Error: plugin 'content' not supported by route system\n" +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/plugins/routeSystem.js:70:11\n' +
+    '    at Array.forEach (<anonymous>)\n' +
+    '    at Object.configure (/home/azureuser/catapult/catapult-client/client/rest/src/plugins/routeSystem.js:68:23)\n' +
+    '    at registerRoutes (/home/azureuser/catapult/catapult-client/client/rest/src/index.js:142:71)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/index.js:198:4\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  timestamp: '2022-10-03T18:25:18.839Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-03T18:29:59.662Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-03T18:29:59.662Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-03T18:29:59.694Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-03T18:29:59.696Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-03T18:29:59.700Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-03T18:29:59.709Z'
+}
+{
+  message: 'connecting to 127.0.0.1:7900',
+  level: 'verbose',
+  timestamp: '2022-10-03T18:30:14.618Z'
+}
+{
+  code: 'SELF_SIGNED_CERT_IN_CHAIN',
+  level: 'verbose',
+  message: 'error raised by 127.0.0.1:7900 connection:  self signed certificate in certificate chain',
+  stack: 'Error: self signed certificate in certificate chain\n' +
+    '    at TLSSocket.onConnectSecure (node:_tls_wrap:1535:34)\n' +
+    '    at TLSSocket.emit (node:events:513:28)\n' +
+    '    at TLSSocket._finishInit (node:_tls_wrap:949:8)\n' +
+    '    at TLSWrap.ssl.onhandshakedone (node:_tls_wrap:730:12)',
+  timestamp: '2022-10-03T18:30:14.634Z'
+}
+{
+  jse_shortmsg: 'connection failed',
+  jse_info: {},
+  message: 'caught error 503 connection failed',
+  body: { code: 'ServiceUnavailable', message: 'connection failed' },
+  level: 'error',
+  stack: 'ServiceUnavailableError: connection failed\n' +
+    '    at Object.createServiceUnavailableError (/home/azureuser/catapult/catapult-client/client/rest/src/server/errors.js:56:44)\n' +
+    '    at TLSSocket.<anonymous> (/home/azureuser/catapult/catapult-client/client/rest/src/connection/connectionService.js:104:20)\n' +
+    '    at TLSSocket.emit (node:events:525:35)\n' +
+    '    at node:net:757:14\n' +
+    '    at TCP.done (node:_tls_wrap:584:7)',
+  timestamp: '2022-10-03T18:30:14.636Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-03T18:37:03.469Z'
+}

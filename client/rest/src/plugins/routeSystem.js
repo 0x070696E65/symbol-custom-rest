@@ -30,6 +30,7 @@ const namespace = require('./namespace/namespace');
 const receipts = require('./receipts/receipts');
 const restrictions = require('./restrictions/restrictions');
 const catapult = require('../catapult-sdk/index');
+const content = require('./content/content');
 const MessageChannelBuilder = require('../connection/MessageChannelBuilder');
 
 const plugins = {
@@ -43,7 +44,8 @@ const plugins = {
 	namespace,
 	receipts,
 	restrictions,
-	transfer: empty
+	transfer: empty,
+	content,
 };
 
 module.exports = {

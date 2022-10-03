@@ -158,12 +158,12 @@ const registerRoutes = (server, db, services) => {
 	// Loading and caching certificates.
 	config.apiNode = {
 		...config.apiNode,
-		certificate: fs.readFileSync(config.apiNode.tlsClientCertificatePath),
-		key: fs.readFileSync(config.apiNode.tlsClientKeyPath),
-		caCertificate: fs.readFileSync(config.apiNode.tlsCaCertificatePath)
+		// certificate: fs.readFileSync(config.apiNode.tlsClientCertificatePath),
+		// key: fs.readFileSync(config.apiNode.tlsClientKeyPath),
+		// caCertificate: fs.readFileSync(config.apiNode.tlsCaCertificatePath)
 	};
-	const nodeCertKey = sshpk.parsePrivateKey(config.apiNode.key);
-	config.apiNode.nodePublicKey = nodeCertKey.toPublic().part.A.data;
+	// const nodeCertKey = sshpk.parsePrivateKey(config.apiNode.key);
+	// config.apiNode.nodePublicKey = nodeCertKey.toPublic().part.A.data;
 
 	const network = catapult.model.networkInfo.networks[config.network.name];
 	if (!network) {

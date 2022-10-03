@@ -4,8 +4,8 @@
     "description": "catapult public test network"
   },
 
-  "port": 3000,
-  "protocol": "HTTPS",
+  "port": 3003,
+  "protocol": "HTTP",
   "sslKeyPath": "",
   "sslCertificatePath": "",
   "crossDomain": {
@@ -31,7 +31,7 @@
   ],
 
   "db": {
-    "url": "mongodb://localhost:27017/",
+    "url": "mongodb://172.20.0.2:27017/",
     "name": "catapult",
     "pageSizeMin": 10,
     "pageSizeMax": 100,

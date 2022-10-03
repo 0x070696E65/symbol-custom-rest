@@ -1,7 +1,8 @@
 const routeUtils = require('../../routes/routeUtils');
 const { convertToLong } = require('../../db/dbUtils');
-const catapult = require('catapult-sdk');
+const catapult = require('../../catapult-sdk');
 const { uint64 } = catapult.utils;
+
 
 module.exports = {
     register: (server, db, services) => {

@@ -47,7 +47,8 @@ const plugins = {
 	namespace,
 	receipts,
 	restrictions,
-	transfer
+	transfer,
+	content
 };
 
 /**
