@@ -27,7 +27,7 @@
     "namespace",
     "receipts",
     "restrictions",
-    "transfer"
+    "content"
   ],
 
   "db": {

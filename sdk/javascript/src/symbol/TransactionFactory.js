@@ -32,6 +32,7 @@ class TransactionFactory {
 		} else if (sc.TransactionType.MOSAIC_DEFINITION === transaction.type) {
 			const address = this.network.publicKeyToAddress(new PublicKey(transaction.signerPublicKey.bytes));
 			transaction.id = new sc.MosaicId(generateMosaicId(address, transaction.nonce.value));
+			console.log("nonce:",transaction.nonce.value,",id:",transaction.id)
 		}
 
 		return transaction;

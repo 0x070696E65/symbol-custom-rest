@@ -6,7 +6,7 @@ const node = "http://154.53.40.175:3000"
 
 const facade = new newXym.facade.SymbolFacade("testnet");
 //const key = new newXym.CryptoTypes.PrivateKey("10F55A7326C36220004AB58AE37F23B6366EFF521108D2C7F25820D3B9FA037B")
-const key = new newXym.CryptoTypes.PrivateKey("64DFB09F7C99424C0B9924577778D1FABE48FA45EE2283FDBE84D5A4C3C6F2F6")
+const key = new newXym.CryptoTypes.PrivateKey("EB7289F7FA85FBD03EEEF12649F974D30406138B32554D2A0FE751B4540768E9")
 
 const now = Date.now();
 const eadj = 1573430400;
@@ -14,13 +14,13 @@ const deadline = BigInt(now - eadj*1000 + 60*60*6*1000)
 
 const transaction = facade.transactionFactory.create({
     type: 'transferv_transaction',
-    signerPublicKey: '9C410FFA9BBD009DBB27478BED178567D54B5EF5BAE475F35139B54E944B4409',
-    fee: 1000000n,
+    signerPublicKey: '9A13A413A61F4370AC14220B56CC10193905FAFBE14FA275E4BD4253338A22DC',
+    fee: 10000000n,
     deadline: deadline,
-    recipientAddress: 'TAEVDDC5TXMJ5ICMRZ6A52DT6NYCQ7U3MBODEWA',
-    // mosaics: [
-    //   { mosaicId: 0x38E1C1C590120CB6n, amount: 1000000n }
-    // ]
+    recipientAddress: 'TC4GURS2RYATUCL2H6QRED754IKRH7PHTRMFPLI',
+    mosaics: [
+      { mosaicId: 0x2EF4723BC702E027n, amount: 1n }
+    ]
 });
 const signature = facade.signTransaction(new newXym.facade.SymbolFacade.KeyPair(key), transaction);
 const jsonPayload = facade.transactionFactory.constructor.attachSignature(transaction, signature);
@@ -29,7 +29,7 @@ anounceTX(JSON.parse(jsonPayload).payload);
 const payload = stringToUint8Array(JSON.parse(jsonPayload).payload);
 const sig = payload.slice(8,8+64);
 const pub = payload.slice(8+64,8+64+32)
-const gene = stringToUint8Array("BF7493C7B84DDBA853AE96C40C87CADDB73CA552CA842627156A015927622A3A");
+const gene = stringToUint8Array("75293B03BA4C927517E78B1220181A7592C22B31EFAB34A3DF88CFEB6DF4641B");
 const tx = payload.slice(8 + 64 + 32 + 4);
 const hasher = sha3_256.create();
 hasher.update(sig);

@@ -28,6 +28,10 @@ const EntityType = {
 	/** Transfer transaction. */
 	transfer: 0x4154,
 
+	transferv: 0x4254,
+
+	revokeTransfer: 0x4354,
+
 	/** Register namespace transaction. */
 	registerNamespace: 0x414E,
 
