@@ -19,6 +19,9 @@
  * along with Catapult.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// ここでサーバの管理をしている
+// todo imageの返却
+
 const SubscriptionManager = require('./SubscriptionManager');
 const errors = require('./errors');
 const websocketMessageHandler = require('./websocketMessageHandler');

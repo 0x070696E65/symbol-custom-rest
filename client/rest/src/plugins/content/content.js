@@ -1,4 +1,4 @@
-const ContentDb = require('./contentDb');
+const ContentDb = require('./ContentDb');
 const contentRoutes = require('./contentRoutes');
 
 module.exports = {

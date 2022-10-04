@@ -806,3 +806,6382 @@
   level: 'info',
   timestamp: '2022-10-03T18:37:03.469Z'
 }
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-03T19:03:15.140Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-03T19:03:15.140Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-03T19:03:15.182Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-03T19:03:15.184Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-03T19:03:15.189Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-03T19:03:15.199Z'
+}
+{
+  jse_shortmsg: 'mosaicId has an invalid format',
+  jse_cause: Error: hex string has unexpected size '0'
+      at fromHex (/home/azureuser/catapult/catapult-client/client/rest/src/catapult-sdk/utils/uint64.js:115:10)
+      at Object.parseArgument (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:122:73)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:300:27
+      at promiseAwareHandler (/home/azureuser/catapult/catapult-client/client/rest/src/server/bootstrapper.js:196:22)
+      at nextTick (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: 'caught error 409 mosaicId has an invalid format',
+  body: {
+    code: 'InvalidArgument',
+    message: 'mosaicId has an invalid format'
+  },
+  level: 'error',
+  stack: 'InvalidArgumentError: mosaicId has an invalid format\n' +
+    '    at Object.createInvalidArgumentError (/home/azureuser/catapult/catapult-client/client/rest/src/server/errors.js:48:5)\n' +
+    '    at Object.parseArgument (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:124:17)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:300:27\n' +
+    '    at promiseAwareHandler (/home/azureuser/catapult/catapult-client/client/rest/src/server/bootstrapper.js:196:22)\n' +
+    '    at nextTick (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2022-10-03T19:06:35.152Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T04:50:28.496Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T05:12:31.291Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T05:12:31.292Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T05:12:31.325Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T05:12:31.327Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T05:12:31.332Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T05:12:31.342Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T06:11:56.244Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:11:58.303Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:11:58.303Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:11:58.337Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:11:58.339Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:11:58.344Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:11:58.354Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T06:12:25.861Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:12:27.329Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:12:27.329Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:12:27.364Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:12:27.366Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:12:27.371Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:12:27.381Z'
+}
+{
+  jse_shortmsg: 'ids.map is not a function',
+  jse_cause: TypeError: ids.map is not a function
+      at ContentDb.mosaicsByIds (/home/azureuser/catapult/catapult-client/client/rest/src/plugins/content/ContentDb.js:33:25)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/plugins/content/contentRoutes.js:32:14
+      at promiseAwareHandler (/home/azureuser/catapult/catapult-client/client/rest/src/server/bootstrapper.js:196:22)
+      at nextTick (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: 'caught error 500 ids.map is not a function',
+  body: { code: 'Internal', message: 'ids.map is not a function' },
+  level: 'error',
+  stack: 'InternalError: ids.map is not a function\n' +
+    '    at Object.toRestError (/home/azureuser/catapult/catapult-client/client/rest/src/server/errors.js:32:5)\n' +
+    '    at toRestError (/home/azureuser/catapult/catapult-client/client/rest/src/server/bootstrapper.js:35:27)\n' +
+    '    at promiseAwareHandler (/home/azureuser/catapult/catapult-client/client/rest/src/server/bootstrapper.js:204:12)\n' +
+    '    at nextTick (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2022-10-04T06:12:30.607Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T06:12:52.147Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:12:53.656Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:12:53.657Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:12:53.691Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:12:53.693Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:12:53.697Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:12:53.707Z'
+}
+{
+  jse_shortmsg: 'ids.map is not a function',
+  jse_cause: TypeError: ids.map is not a function
+      at ContentDb.mosaicsByIds (/home/azureuser/catapult/catapult-client/client/rest/src/plugins/content/ContentDb.js:33:25)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/plugins/content/contentRoutes.js:33:14
+      at promiseAwareHandler (/home/azureuser/catapult/catapult-client/client/rest/src/server/bootstrapper.js:196:22)
+      at nextTick (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: 'caught error 500 ids.map is not a function',
+  body: { code: 'Internal', message: 'ids.map is not a function' },
+  level: 'error',
+  stack: 'InternalError: ids.map is not a function\n' +
+    '    at Object.toRestError (/home/azureuser/catapult/catapult-client/client/rest/src/server/errors.js:32:5)\n' +
+    '    at toRestError (/home/azureuser/catapult/catapult-client/client/rest/src/server/bootstrapper.js:35:27)\n' +
+    '    at promiseAwareHandler (/home/azureuser/catapult/catapult-client/client/rest/src/server/bootstrapper.js:204:12)\n' +
+    '    at nextTick (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2022-10-04T06:12:55.507Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T06:14:37.047Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:14:38.509Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:14:38.510Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:14:38.543Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:14:38.545Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:14:38.550Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:14:38.559Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T06:15:28.899Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:15:30.055Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:15:30.056Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:15:30.090Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:15:30.091Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:15:30.096Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:15:30.106Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T06:17:16.730Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:17:18.205Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:17:18.205Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:17:18.238Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:17:18.240Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:17:18.244Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:17:18.254Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T06:24:48.603Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:24:50.136Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:24:50.136Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:24:50.171Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:24:50.172Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:24:50.177Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:24:50.187Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T06:25:24.819Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:25:26.136Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:25:26.136Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:25:26.188Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:25:26.189Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:25:26.197Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:25:26.211Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T06:28:45.543Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:28:47.318Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:28:47.318Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:28:47.353Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:28:47.354Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:28:47.359Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:28:47.369Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T06:29:37.744Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:29:38.972Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:29:38.972Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:29:39.005Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:29:39.007Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:29:39.012Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:29:39.021Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T06:32:27.440Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:32:28.754Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:32:28.755Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:32:28.788Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:32:28.790Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:32:28.796Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:32:28.806Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T06:40:37.713Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T06:40:37.714Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T06:40:37.747Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T06:40:37.749Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T06:40:37.753Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T06:40:37.763Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T07:26:08.360Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T07:26:10.254Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T07:26:10.254Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T07:26:10.287Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T07:26:10.288Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T07:26:10.293Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T07:26:10.303Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T07:26:59.054Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T07:27:00.677Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T07:27:00.677Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T07:27:00.710Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T07:27:00.712Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T07:27:00.717Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T07:27:00.727Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T07:27:20.116Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T07:27:21.475Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T07:27:21.475Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T07:27:21.508Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T07:27:21.510Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T07:27:21.515Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T07:27:21.524Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T07:31:26.253Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T12:15:30.433Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T12:15:30.433Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T12:15:30.464Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T12:15:30.465Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T12:15:30.470Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T12:15:30.482Z'
+}
+{
+  jse_shortmsg: 'res.setHeader is not a function',
+  jse_cause: TypeError: res.setHeader is not a function
+      at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:274:10
+      at /home/azureuser/catapult/catapult-client/client/rest/src/plugins/content/contentRoutes.js:46:76
+      at processTicksAndRejections (node:internal/process/task_queues:96:5),
+  jse_info: {},
+  message: 'caught error 500 res.setHeader is not a function',
+  body: { code: 'Internal', message: 'res.setHeader is not a function' },
+  level: 'error',
+  stack: 'InternalError: res.setHeader is not a function\n' +
+    '    at Object.toRestError (/home/azureuser/catapult/catapult-client/client/rest/src/server/errors.js:32:5)\n' +
+    '    at toRestError (/home/azureuser/catapult/catapult-client/client/rest/src/server/bootstrapper.js:38:27)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/server/bootstrapper.js:204:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  timestamp: '2022-10-04T12:15:37.967Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T12:17:35.312Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T12:17:36.850Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T12:17:36.850Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T12:17:36.884Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T12:17:36.885Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T12:17:36.890Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T12:17:36.900Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T15:05:26.132Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:05:27.500Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:05:27.500Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:05:27.533Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:05:27.535Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:05:27.540Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:05:27.549Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.writeHead (node:_http_server:335:13)
+      at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)
+      at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)
+      at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)
+      at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)
+      at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:288:10)
+      at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot render headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:288:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:288:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:05:36 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4030715,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 67674112,
+      heapTotal: 24707072,
+      heapUsed: 22564616,
+      external: 19280169,
+      arrayBuffers: 18329594
+    }
+  },
+  os: { loadavg: [ 0.32, 0.37, 0.4 ], uptime: 1467847.99 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:_http_server',
+      function: 'ServerResponse.writeHead',
+      line: 335,
+      method: 'writeHead',
+      native: false
+    },
+    {
+      column: 25,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.restifyWriteHead [as writeHead]',
+      line: 653,
+      method: 'restifyWriteHead [as writeHead]',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'flush',
+      line: 870,
+      method: null,
+      native: false
+    },
+    {
+      column: 24,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.__send',
+      line: 431,
+      method: '__send',
+      native: false
+    },
+    {
+      column: 21,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.send',
+      line: 316,
+      method: 'send',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: 'ReadFileContext.callback',
+      line: 288,
+      method: 'callback',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:fs',
+      function: 'FSReqCallback.readFileAfterOpen [as oncomplete]',
+      line: 323,
+      method: 'readFileAfterOpen [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:05:36.487Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:07:00.420Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:07:00.421Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:07:00.453Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:07:00.454Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:07:00.460Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:07:00.469Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.writeHead (node:_http_server:335:13)
+      at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)
+      at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)
+      at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)
+      at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)
+      at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:288:10)
+      at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot render headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:288:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:288:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:07:03 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4031193,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 87359488,
+      heapTotal: 57737216,
+      heapUsed: 22815416,
+      external: 19366727,
+      arrayBuffers: 18332937
+    }
+  },
+  os: { loadavg: [ 0.13, 0.28, 0.36 ], uptime: 1467934.59 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:_http_server',
+      function: 'ServerResponse.writeHead',
+      line: 335,
+      method: 'writeHead',
+      native: false
+    },
+    {
+      column: 25,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.restifyWriteHead [as writeHead]',
+      line: 653,
+      method: 'restifyWriteHead [as writeHead]',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'flush',
+      line: 870,
+      method: null,
+      native: false
+    },
+    {
+      column: 24,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.__send',
+      line: 431,
+      method: '__send',
+      native: false
+    },
+    {
+      column: 21,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.send',
+      line: 316,
+      method: 'send',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: 'ReadFileContext.callback',
+      line: 288,
+      method: 'callback',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:fs',
+      function: 'FSReqCallback.readFileAfterOpen [as oncomplete]',
+      line: 323,
+      method: 'readFileAfterOpen [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:07:03.092Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:10:55.562Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:10:55.562Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:10:55.595Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:10:55.596Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:10:55.601Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:10:55.610Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.writeHead (node:_http_server:335:13)
+      at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)
+      at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)
+      at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)
+      at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)
+      at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:289:10)
+      at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot render headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:289:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:289:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:10:58 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4032498,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 86523904,
+      heapTotal: 58523648,
+      heapUsed: 22656976,
+      external: 19344309,
+      arrayBuffers: 18330672
+    }
+  },
+  os: { loadavg: [ 0.03, 0.16, 0.29 ], uptime: 1468169.83 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:_http_server',
+      function: 'ServerResponse.writeHead',
+      line: 335,
+      method: 'writeHead',
+      native: false
+    },
+    {
+      column: 25,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.restifyWriteHead [as writeHead]',
+      line: 653,
+      method: 'restifyWriteHead [as writeHead]',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'flush',
+      line: 870,
+      method: null,
+      native: false
+    },
+    {
+      column: 24,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.__send',
+      line: 431,
+      method: '__send',
+      native: false
+    },
+    {
+      column: 21,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.send',
+      line: 316,
+      method: 'send',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: 'ReadFileContext.callback',
+      line: 289,
+      method: 'callback',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:fs',
+      function: 'FSReqCallback.readFileAfterOpen [as oncomplete]',
+      line: 323,
+      method: 'readFileAfterOpen [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:10:58.333Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:13:34.158Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:13:34.158Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:13:34.197Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:13:34.198Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:13:34.203Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:13:34.213Z'
+}
+{
+  error: TypeError: res.type is not a function
+      at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:289:10)
+      at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13),
+  level: 'error',
+  message: 'uncaughtException: res.type is not a function\n' +
+    'TypeError: res.type is not a function\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:289:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  stack: 'TypeError: res.type is not a function\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:289:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:13:36 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4033247,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 85602304,
+      heapTotal: 58261504,
+      heapUsed: 22439000,
+      external: 24143303,
+      arrayBuffers: 18330672
+    }
+  },
+  os: { loadavg: [ 1.15, 0.47, 0.37 ], uptime: 1468328.48 },
+  trace: [
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: 'ReadFileContext.callback',
+      line: 289,
+      method: 'callback',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:fs',
+      function: 'FSReqCallback.readFileAfterOpen [as oncomplete]',
+      line: 323,
+      method: 'readFileAfterOpen [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:13:36.984Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:14:42.620Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:14:42.620Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:14:42.654Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:14:42.655Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:14:42.660Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:14:42.670Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.writeHead (node:_http_server:335:13)
+      at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)
+      at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)
+      at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)
+      at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)
+      at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:289:10)
+      at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot render headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:289:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:289:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:14:44 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4033627,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 83062784,
+      heapTotal: 38338560,
+      heapUsed: 28210168,
+      external: 24145205,
+      arrayBuffers: 18789701
+    }
+  },
+  os: { loadavg: [ 1.03, 0.54, 0.4 ], uptime: 1468395.87 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:_http_server',
+      function: 'ServerResponse.writeHead',
+      line: 335,
+      method: 'writeHead',
+      native: false
+    },
+    {
+      column: 25,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.restifyWriteHead [as writeHead]',
+      line: 653,
+      method: 'restifyWriteHead [as writeHead]',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'flush',
+      line: 870,
+      method: null,
+      native: false
+    },
+    {
+      column: 24,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.__send',
+      line: 431,
+      method: '__send',
+      native: false
+    },
+    {
+      column: 21,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.send',
+      line: 316,
+      method: 'send',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: 'ReadFileContext.callback',
+      line: 289,
+      method: 'callback',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:fs',
+      function: 'FSReqCallback.readFileAfterOpen [as oncomplete]',
+      line: 323,
+      method: 'readFileAfterOpen [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:14:44.369Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:15:17.227Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:15:17.227Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:15:17.263Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:15:17.264Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:15:17.269Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:15:17.279Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.writeHead (node:_http_server:335:13)
+      at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)
+      at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)
+      at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)
+      at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)
+      at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10)
+      at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot render headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at flush (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:870:9)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:431:24)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at ReadFileContext.callback (/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10)\n' +
+    '    at FSReqCallback.readFileAfterOpen [as oncomplete] (node:fs:323:13)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:15:19 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4033926,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 81674240,
+      heapTotal: 38600704,
+      heapUsed: 27675960,
+      external: 24145228,
+      arrayBuffers: 18682159
+    }
+  },
+  os: { loadavg: [ 0.89, 0.57, 0.42 ], uptime: 1468430.56 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:_http_server',
+      function: 'ServerResponse.writeHead',
+      line: 335,
+      method: 'writeHead',
+      native: false
+    },
+    {
+      column: 25,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.restifyWriteHead [as writeHead]',
+      line: 653,
+      method: 'restifyWriteHead [as writeHead]',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'flush',
+      line: 870,
+      method: null,
+      native: false
+    },
+    {
+      column: 24,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.__send',
+      line: 431,
+      method: '__send',
+      native: false
+    },
+    {
+      column: 21,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.send',
+      line: 316,
+      method: 'send',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: 'ReadFileContext.callback',
+      line: 290,
+      method: 'callback',
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:fs',
+      function: 'FSReqCallback.readFileAfterOpen [as oncomplete]',
+      line: 323,
+      method: 'readFileAfterOpen [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:15:19.059Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:16:15.022Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:16:15.022Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:16:15.060Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:16:15.061Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:16:15.067Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:16:15.077Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.setHeader (node:_http_outgoing:603:11)
+      at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:505:18)
+      at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10
+      at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot set headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.setHeader (node:_http_outgoing:603:11)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:505:18)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.setHeader (node:_http_outgoing:603:11)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:505:18)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:16:16 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4034197,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 83300352,
+      heapTotal: 57212928,
+      heapUsed: 24506856,
+      external: 19405931,
+      arrayBuffers: 18453433
+    }
+  },
+  os: { loadavg: [ 0.58, 0.52, 0.41 ], uptime: 1468488.36 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 11,
+      file: 'node:_http_outgoing',
+      function: 'ServerResponse.setHeader',
+      line: 603,
+      method: 'setHeader',
+      native: false
+    },
+    {
+      column: 18,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.__send',
+      line: 505,
+      method: '__send',
+      native: false
+    },
+    {
+      column: 21,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.send',
+      line: 316,
+      method: 'send',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: null,
+      line: 290,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'node:internal/fs/read_file_context',
+      function: 'FSReqCallback.readFileAfterClose [as oncomplete]',
+      line: 68,
+      method: 'readFileAfterClose [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:16:16.863Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:17:23.719Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:17:23.719Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:17:23.765Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:17:23.767Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:17:23.776Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:17:23.787Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.setHeader (node:_http_outgoing:603:11)
+      at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:505:18)
+      at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10
+      at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot set headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.setHeader (node:_http_outgoing:603:11)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:505:18)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.setHeader (node:_http_outgoing:603:11)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:505:18)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:17:26 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4034566,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 81338368,
+      heapTotal: 57737216,
+      heapUsed: 24021992,
+      external: 19352285,
+      arrayBuffers: 18385784
+    }
+  },
+  os: { loadavg: [ 0.76, 0.61, 0.45 ], uptime: 1468557.71 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 11,
+      file: 'node:_http_outgoing',
+      function: 'ServerResponse.setHeader',
+      line: 603,
+      method: 'setHeader',
+      native: false
+    },
+    {
+      column: 18,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.__send',
+      line: 505,
+      method: '__send',
+      native: false
+    },
+    {
+      column: 21,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.send',
+      line: 316,
+      method: 'send',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: null,
+      line: 290,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'node:internal/fs/read_file_context',
+      function: 'FSReqCallback.readFileAfterClose [as oncomplete]',
+      line: 68,
+      method: 'readFileAfterClose [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:17:26.212Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:17:49.235Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:17:49.236Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:17:49.269Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:17:49.271Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:17:49.276Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:17:49.285Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.setHeader (node:_http_outgoing:603:11)
+      at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:505:18)
+      at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10
+      at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot set headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.setHeader (node:_http_outgoing:603:11)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:505:18)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.setHeader (node:_http_outgoing:603:11)\n' +
+    '    at ServerResponse.__send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:505:18)\n' +
+    '    at ServerResponse.send (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:316:21)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:17:50 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4034776,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 80814080,
+      heapTotal: 38600704,
+      heapUsed: 27515680,
+      external: 24186001,
+      arrayBuffers: 18697667
+    }
+  },
+  os: { loadavg: [ 0.57, 0.57, 0.44 ], uptime: 1468582.45 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 11,
+      file: 'node:_http_outgoing',
+      function: 'ServerResponse.setHeader',
+      line: 603,
+      method: 'setHeader',
+      native: false
+    },
+    {
+      column: 18,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.__send',
+      line: 505,
+      method: '__send',
+      native: false
+    },
+    {
+      column: 21,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.send',
+      line: 316,
+      method: 'send',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: null,
+      line: 290,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'node:internal/fs/read_file_context',
+      function: 'FSReqCallback.readFileAfterClose [as oncomplete]',
+      line: 68,
+      method: 'readFileAfterClose [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:17:50.948Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:23:12.109Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:23:12.110Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:23:12.142Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:23:12.144Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:23:12.149Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:23:12.159Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.writeHead (node:_http_server:335:13)
+      at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10
+      at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot render headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:23:15 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4036207,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 85016576,
+      heapTotal: 57212928,
+      heapUsed: 24532224,
+      external: 19414480,
+      arrayBuffers: 18461982
+    }
+  },
+  os: { loadavg: [ 0.27, 0.31, 0.36 ], uptime: 1468907 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:_http_server',
+      function: 'ServerResponse.writeHead',
+      line: 335,
+      method: 'writeHead',
+      native: false
+    },
+    {
+      column: 25,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.restifyWriteHead [as writeHead]',
+      line: 653,
+      method: 'restifyWriteHead [as writeHead]',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: null,
+      line: 290,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'node:internal/fs/read_file_context',
+      function: 'FSReqCallback.readFileAfterClose [as oncomplete]',
+      line: 68,
+      method: 'readFileAfterClose [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:23:15.504Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:24:29.311Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:24:29.311Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:24:29.342Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:24:29.344Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:24:29.348Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:24:29.358Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.writeHead (node:_http_server:335:13)
+      at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10
+      at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot render headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:24:30 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4036732,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 83722240,
+      heapTotal: 57475072,
+      heapUsed: 24521448,
+      external: 19422071,
+      arrayBuffers: 18466402
+    }
+  },
+  os: { loadavg: [ 0.13, 0.26, 0.34 ], uptime: 1468982.29 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:_http_server',
+      function: 'ServerResponse.writeHead',
+      line: 335,
+      method: 'writeHead',
+      native: false
+    },
+    {
+      column: 25,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.restifyWriteHead [as writeHead]',
+      line: 653,
+      method: 'restifyWriteHead [as writeHead]',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: null,
+      line: 290,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'node:internal/fs/read_file_context',
+      function: 'FSReqCallback.readFileAfterClose [as oncomplete]',
+      line: 68,
+      method: 'readFileAfterClose [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:24:30.791Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:25:14.376Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:25:14.376Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:25:14.409Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:25:14.411Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:25:14.416Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:25:14.425Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.writeHead (node:_http_server:335:13)
+      at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10
+      at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot render headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:25:16 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4037027,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 81096704,
+      heapTotal: 38600704,
+      heapUsed: 27487216,
+      external: 24186046,
+      arrayBuffers: 18704110
+    }
+  },
+  os: { loadavg: [ 0.13, 0.24, 0.33 ], uptime: 1469027.96 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:_http_server',
+      function: 'ServerResponse.writeHead',
+      line: 335,
+      method: 'writeHead',
+      native: false
+    },
+    {
+      column: 25,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.restifyWriteHead [as writeHead]',
+      line: 653,
+      method: 'restifyWriteHead [as writeHead]',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: null,
+      line: 290,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'node:internal/fs/read_file_context',
+      function: 'FSReqCallback.readFileAfterClose [as oncomplete]',
+      line: 68,
+      method: 'readFileAfterClose [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:25:16.465Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:26:56.895Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:26:56.895Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:26:56.929Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:26:56.931Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:26:56.935Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:26:56.945Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.writeHead (node:_http_server:335:13)
+      at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/plugins/content/contentRoutes.js:52:11
+      at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot render headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/plugins/content/contentRoutes.js:52:11\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/plugins/content/contentRoutes.js:52:11\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  exception: true,
+  date: 'Tue Oct 04 2022 15:26:58 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4037584,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 85032960,
+      heapTotal: 38338560,
+      heapUsed: 28165832,
+      external: 24178631,
+      arrayBuffers: 18832112
+    }
+  },
+  os: { loadavg: [ 0.47, 0.34, 0.35 ], uptime: 1469130.11 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:_http_server',
+      function: 'ServerResponse.writeHead',
+      line: 335,
+      method: 'writeHead',
+      native: false
+    },
+    {
+      column: 25,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.restifyWriteHead [as writeHead]',
+      line: 653,
+      method: 'restifyWriteHead [as writeHead]',
+      native: false
+    },
+    {
+      column: 11,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/plugins/content/contentRoutes.js',
+      function: null,
+      line: 52,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'node:internal/fs/read_file_context',
+      function: 'FSReqCallback.readFileAfterClose [as oncomplete]',
+      line: 68,
+      method: 'readFileAfterClose [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T15:26:58.613Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:27:55.757Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:27:55.757Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:27:55.790Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:27:55.792Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:27:55.797Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:27:55.807Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T15:46:40.022Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:46:41.470Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:46:41.470Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:46:41.504Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:46:41.506Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:46:41.511Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:46:41.522Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T15:47:22.731Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:47:23.964Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:47:23.964Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:47:23.995Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:47:23.997Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:47:24.002Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:47:24.011Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T15:47:55.569Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:47:56.931Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:47:56.931Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:47:56.962Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:47:56.964Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:47:56.969Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:47:56.978Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T15:48:28.995Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T15:48:33.835Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T15:48:35.499Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T15:48:35.998Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T15:48:36.081Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T15:48:42.663Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T15:48:42.663Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T15:48:42.695Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T15:48:42.697Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T15:48:42.702Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T15:48:42.711Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T15:48:51.856Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T16:02:22.765Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T16:02:22.766Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T16:02:22.807Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T16:02:22.809Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T16:02:22.813Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T16:02:22.823Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T16:17:16.886Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T16:17:23.376Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T16:17:23.377Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T16:17:23.409Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T16:17:23.411Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T16:17:23.416Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T16:17:23.425Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T16:22:48.713Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T16:22:50.102Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T16:22:50.103Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T16:22:50.136Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T16:22:50.138Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T16:22:50.144Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T16:22:50.154Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T16:23:44.792Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T16:23:46.264Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T16:23:46.264Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T16:23:46.304Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T16:23:46.306Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T16:23:46.312Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T16:23:46.324Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.writeHead (node:_http_server:335:13)
+      at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10
+      at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot render headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  exception: true,
+  date: 'Tue Oct 04 2022 16:23:48 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4055743,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 81281024,
+      heapTotal: 38756352,
+      heapUsed: 28360208,
+      external: 24322747,
+      arrayBuffers: 18859686
+    }
+  },
+  os: { loadavg: [ 2.57, 2.83, 2.84 ], uptime: 1472539.57 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:_http_server',
+      function: 'ServerResponse.writeHead',
+      line: 335,
+      method: 'writeHead',
+      native: false
+    },
+    {
+      column: 25,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.restifyWriteHead [as writeHead]',
+      line: 653,
+      method: 'restifyWriteHead [as writeHead]',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: null,
+      line: 290,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'node:internal/fs/read_file_context',
+      function: 'FSReqCallback.readFileAfterClose [as oncomplete]',
+      line: 68,
+      method: 'readFileAfterClose [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T16:23:48.072Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T16:24:05.891Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T16:24:05.891Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T16:24:05.924Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T16:24:05.925Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T16:24:05.930Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T16:24:05.938Z'
+}
+{
+  error: Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client
+      at new NodeError (node:internal/errors:387:5)
+      at ServerResponse.writeHead (node:_http_server:335:13)
+      at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)
+      at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10
+      at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3) {
+    code: 'ERR_HTTP_HEADERS_SENT'
+  },
+  level: 'error',
+  message: 'uncaughtException: Cannot render headers after they are sent to the client\n' +
+    'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  stack: 'Error [ERR_HTTP_HEADERS_SENT]: Cannot render headers after they are sent to the client\n' +
+    '    at new NodeError (node:internal/errors:387:5)\n' +
+    '    at ServerResponse.writeHead (node:_http_server:335:13)\n' +
+    '    at ServerResponse.restifyWriteHead [as writeHead] (/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js:653:25)\n' +
+    '    at /home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js:290:10\n' +
+    '    at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read_file_context:68:3)',
+  exception: true,
+  date: 'Tue Oct 04 2022 16:24:09 GMT+0000 (Coordinated Universal Time)',
+  process: {
+    pid: 4055994,
+    uid: 1000,
+    gid: 1000,
+    cwd: '/home/azureuser/catapult/catapult-client/client/rest/src',
+    execPath: '/usr/bin/node',
+    version: 'v16.17.0',
+    argv: [
+      '/usr/bin/node',
+      '/home/azureuser/catapult/catapult-client/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 85491712,
+      heapTotal: 39018496,
+      heapUsed: 28151456,
+      external: 24322747,
+      arrayBuffers: 18790238
+    }
+  },
+  os: { loadavg: [ 2.81, 2.86, 2.85 ], uptime: 1472560.58 },
+  trace: [
+    {
+      column: 5,
+      file: 'node:internal/errors',
+      function: 'new NodeError',
+      line: 387,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'node:_http_server',
+      function: 'ServerResponse.writeHead',
+      line: 335,
+      method: 'writeHead',
+      native: false
+    },
+    {
+      column: 25,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/node_modules/restify/lib/response.js',
+      function: 'ServerResponse.restifyWriteHead [as writeHead]',
+      line: 653,
+      method: 'restifyWriteHead [as writeHead]',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/home/azureuser/catapult/catapult-client/client/rest/src/routes/routeUtils.js',
+      function: null,
+      line: 290,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: 'node:internal/fs/read_file_context',
+      function: 'FSReqCallback.readFileAfterClose [as oncomplete]',
+      line: 68,
+      method: 'readFileAfterClose [as oncomplete]',
+      native: false
+    }
+  ],
+  timestamp: '2022-10-04T16:24:09.085Z'
+}
+{
+  message: 'loading config from ../resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3003,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/',
+    tlsClientKeyPath: '/',
+    tlsCaCertificatePath: '/',
+    networkPropertyFilePath: '/',
+    nodePropertyFilePath: '/'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2022-10-04T16:26:58.323Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2022-10-04T16:26:58.323Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2022-10-04T16:26:58.356Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2022-10-04T16:26:58.358Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2022-10-04T16:26:58.363Z'
+}
+{
+  message: 'listening on port 3003',
+  level: 'info',
+  timestamp: '2022-10-04T16:26:58.373Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2022-10-04T17:28:45.614Z'
+}

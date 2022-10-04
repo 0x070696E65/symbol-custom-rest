@@ -182,7 +182,7 @@ const registerRoutes = (server, db, services) => {
 	});
 
 	serviceManager.pushService(db, 'close');
-
+	// winstonはログ管理用
 	winston.info(`connecting to ${config.db.url} (database:${config.db.name})`);
 	connectToDbWithRetry(db, config.db)
 		.then(() => {

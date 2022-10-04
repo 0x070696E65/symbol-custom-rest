@@ -30,9 +30,10 @@ class ContentDb {
 	 * @returns {Promise.<array>} Mosaics.
 	 */
 	mosaicsByIds(ids) {
-		const mosaicIds = ids.map(id => new Long(id[0], id[1]));
+		const mosaicIds = ids;
 		const conditions = { 'mosaic.id': { $in: mosaicIds } };
 		const collection = this.catapultDb.database.collection('mosaics');
+		console.log(conditions);
 		return collection.find(conditions)
 			.sort({ _id: -1 })
 			.toArray()

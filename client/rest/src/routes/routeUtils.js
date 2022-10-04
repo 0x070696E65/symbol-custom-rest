@@ -23,7 +23,6 @@ const dbFacade = require('./dbFacade');
 const routeResultTypes = require('./routeResultTypes');
 const catapult = require('../catapult-sdk/index');
 const errors = require('../server/errors');
-
 const { address } = catapult.model;
 const { buildAuditPath, indexOfLeafWithHash } = catapult.crypto.merkle;
 const { convert, uint64 } = catapult.utils;
@@ -37,6 +36,8 @@ const constants = {
 		hash512: 64
 	}
 };
+
+const fs = require("fs");
 
 const isObjectId = str => 24 === str.length && convert.isHexString(str);
 
@@ -274,6 +275,23 @@ const routeUtils = {
 					res.setHeader('content-type', 'text/plain');
 				res.send(data);
 				next();
+			};
+		},
+
+		sendImage(res, next) {
+			return data => {
+				// if (!data)
+				// 	res.send(errors.createInternalError('error retrieving plain text'));
+				// else
+				// 	res.setHeader('content-type', 'image/png');
+				// res.setHeader('content-type', 'image/png');
+				fs.readFile("../README.md", (err, data) => {
+					// console.log(data)
+					res.writeHead(200);
+					res.write(data);
+					res.end();
+				  });
+				// next();
 			};
 		}
 	}),
