@@ -37,8 +37,6 @@ const constants = {
 	}
 };
 
-const fs = require("fs");
-
 const isObjectId = str => 24 === str.length && convert.isHexString(str);
 
 const namedParserMap = {
@@ -278,20 +276,12 @@ const routeUtils = {
 			};
 		},
 
-		sendImage(res, next) {
-			return data => {
-				// if (!data)
-				// 	res.send(errors.createInternalError('error retrieving plain text'));
-				// else
-				// 	res.setHeader('content-type', 'image/png');
-				// res.setHeader('content-type', 'image/png');
-				fs.readFile("../README.md", (err, data) => {
-					// console.log(data)
-					res.writeHead(200);
-					res.write(data);
-					res.end();
-				  });
-				// next();
+		sendContent(res, next) {
+			return (data, mime) => {
+				res.setHeader('content-type', mime);
+				res.write(data);
+				res.end();
+				next();
 			};
 		}
 	}),

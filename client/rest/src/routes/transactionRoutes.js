@@ -94,8 +94,9 @@ module.exports = {
 				throw Error(`invalid length of transaction id '${params.transactionId}'`);
 
 			const transactionId = routeUtils.parseArgument(params, 'transactionId', 'id' === paramType ? 'objectId' : 'hash256');
-
+			console.log(transactionId)
 			const dbTransactionsRetriever = 'id' === paramType ? 'transactionsByIds' : 'transactionsByHashes';
+			console.log(dbTransactionsRetriever)
 			return db[dbTransactionsRetriever](params.group, [transactionId]).then(sender.sendOne(params.transactionId, res, next));
 		});
 

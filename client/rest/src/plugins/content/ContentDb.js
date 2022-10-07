@@ -1,4 +1,5 @@
 const { buildOffsetCondition } = require('../../db/dbUtils');
+const { convertToLong } = require('../../db/dbUtils');
 const MongoDb = require('mongodb');
 
 const { Long } = MongoDb;
@@ -8,36 +9,28 @@ class ContentDb {
         this.catapultDb = db;
     }
 
-	mosaics(ownerAddress, options) {
+	metadataEntry(targetId, metadataType, options) {
 		const sortingOptions = { id: '_id' };
 
 		let conditions = {};
-
+		conditions['metadataEntry.targetId'] = convertToLong(targetId);
+		conditions['metadataEntry.metadataType'] = 1;//mosaic
 		const offsetCondition = buildOffsetCondition(options, sortingOptions);
 		if (offsetCondition)
 			conditions = Object.assign(conditions, offsetCondition);
 
-		if (undefined !== ownerAddress)
-			conditions['mosaic.ownerAddress'] = Buffer.from(ownerAddress);
+		if (undefined !== targetId)
+			conditions['metadataEntry.targetId'] = convertToLong(targetId);
+
+		if (undefined !== metadataType)
+			conditions['metadataEntry.metadataType'] = metadataType;
 
 		const sortConditions = { [sortingOptions[options.sortField]]: options.sortDirection };
-		return this.catapultDb.queryPagedDocuments(conditions, [], sortConditions, 'mosaics', options);
+		return this.catapultDb.queryPagedDocuments(conditions, [], sortConditions, 'metadata', options);
 	}
 
-	/**
-	 * Retrieves mosaics given their ids.
-	 * @param {Array.<module:catapult.utils/uint64~uint64>} ids Mosaic ids.
-	 * @returns {Promise.<array>} Mosaics.
-	 */
-	mosaicsByIds(ids) {
-		const mosaicIds = ids;
-		const conditions = { 'mosaic.id': { $in: mosaicIds } };
-		const collection = this.catapultDb.database.collection('mosaics');
-		console.log(conditions);
-		return collection.find(conditions)
-			.sort({ _id: -1 })
-			.toArray()
-			.then(entities => Promise.resolve(this.catapultDb.sanitizer.renameIds(entities)));
+	transactionsByHashes(hashes){
+		return this.catapultDb.transactionsByHashes("confirmed", hashes);
 	}
 }
 
