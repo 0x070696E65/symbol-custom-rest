@@ -44,9 +44,10 @@ module.exports = {
 							const res = is_tx(m.metadataEntry.value);
 							if(res!==undefined)hashes.push(...res);
 						});
-						// txを全てデコードする
+						// parse txs
 						db.transactionsByHashes(hashes)
 							.then(txs=>{
+								if(txs.length>400)throw 'Large file is not allowed';
 								txs.forEach(agg=>{
 									if(!(agg.transaction.transactions.length > 1 &&
 										agg.transaction.transactions[1].transaction.message?.buffer.slice(1,).toString().match(/^00000#/) != null &&
@@ -56,7 +57,7 @@ module.exports = {
 											payload.push(itx.transaction.message.buffer.slice(1,).toString());
 										})
 									}
-								})
+								});
 								routeUtils.createSender('content').sendContent(res, next)(
 									Buffer.from(payload.filter(v => v).sort(numCompare).map((r) => r.split('#', 2)[1]).join(), "base64"),
 									mime
