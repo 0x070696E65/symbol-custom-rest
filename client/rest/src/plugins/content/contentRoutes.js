@@ -94,6 +94,10 @@ module.exports = {
 				console.log(compositeHash);
 				const compositeHashes = routeUtils.parseArgument(compositeHash, 'compositeHash', 'hash256');
 				console.log(compositeHashes);
+				// ここからこれはどう？
+				db.metadatasByCompositeHash(compositeHashes).then(r => {
+					console.log(r);
+				});
 				return db.metadatasByCompositeHash(compositeHashes)
 					.then(result => {
 						console.log('result');
