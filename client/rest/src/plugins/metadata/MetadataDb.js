@@ -70,9 +70,12 @@ class MetadataDb {
 	}
 
 	metadatasByCompositeHash(ids) {
+		console.log(ids);
 		const compositeHashes = ids.map(id => Buffer.from(id));
+		console.log(compositeHashes);
 		const conditions = { 'metadataEntry.compositeHash': { $in: compositeHashes } };
 		const collection = this.catapultDb.database.collection('metadata');
+		console.log(collection);
 		return collection.find(conditions)
 			.sort({ _id: -1 })
 			.toArray()
