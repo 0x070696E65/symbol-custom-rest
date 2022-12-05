@@ -41,6 +41,7 @@ module.exports = {
 				const options = {
 					sortField: 'id', sortDirection: 1, pageSize: 1000, pageNumber: 1
 				};
+				console.log(db);
 				return db.metadataEntry(targetId, metadataType, options)
 					.then(result => {
 						const meta = result.data;
