@@ -92,6 +92,7 @@ module.exports = {
 				console.log(compositeHash);
 				return db.metadatasByCompositeHash(metal.restoreMetadataHash(req.params))
 					.then(result => {
+						routeUtils.createSender('content').sendPlainText(res, next)(result);
 						console.log(result);
 					});
 			} catch (e) {
