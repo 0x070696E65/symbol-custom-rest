@@ -81,16 +81,16 @@ module.exports = {
 			} catch (e) {
 				res.send(errors.createInternalError('error retrieving data'));
 			}
-			next();
 		});
 		// eslint-disable-next-line consistent-return
 		server.get('/content/metal/:metalId', (req, res, next) => {
 			try {
-				const compositeHash = routeUtils.parseArgument(metal.restoreMetadataHash(req.params), 'compositeHash', 'hash256');
-				console.log(req.params);
-				console.log(metal.restoreMetadataHash(req.params));
+				const { metalId } = req.params;
+				const compositeHash = routeUtils.parseArgument(metal.restoreMetadataHash(metalId), 'compositeHash', 'hash256');
+				console.log(metalId);
+				console.log(metal.restoreMetadataHash(metalId));
 				console.log(compositeHash);
-				return db.metadatasByCompositeHash(metal.restoreMetadataHash(req.params))
+				return db.metadatasByCompositeHash(metal.restoreMetadataHash(metalId))
 					.then(result => {
 						routeUtils.createSender('content').sendPlainText(res, next)(result);
 						console.log(result);
@@ -98,7 +98,6 @@ module.exports = {
 			} catch (e) {
 				res.send(errors.createInternalError('error retrieving data'));
 			}
-			next();
 		});
 	}
 };

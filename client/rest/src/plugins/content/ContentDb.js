@@ -1,4 +1,3 @@
-// const { getFirstChunk } = require('./metal');
 const { buildOffsetCondition } = require('../../db/dbUtils');
 const { convertToLong } = require('../../db/dbUtils');
 // const MongoDb = require('mongodb');
