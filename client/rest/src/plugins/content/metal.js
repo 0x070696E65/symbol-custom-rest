@@ -5,6 +5,7 @@ const METAL_ID_HEADER_HEX = '0B2A';
 
 const uint8ToHex = input => {
 	let s = '';
+	// eslint-disable-next-line no-restricted-syntax
 	for (const byte of input) {
 		s += Nibble_To_Char_Map[byte >> 4];
 		s += Nibble_To_Char_Map[byte & 0x0f];
