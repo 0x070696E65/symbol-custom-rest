@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
-/* eslint-disable no-unused-expressions */
-const { restoreMetadataHash } = require('./metal');
+const metal = require('./metal');
 const catapult = require('../../catapult-sdk');
 const { convertToLong } = require('../../db/dbUtils');
 // eslint-disable-next-line import/order
@@ -87,11 +86,11 @@ module.exports = {
 		// eslint-disable-next-line consistent-return
 		server.get('/content/metal/:metalId', (req, res, next) => {
 			try {
-				const compositeHash = routeUtils.parseArgument(restoreMetadataHash(req.params), 'compositeHash', 'hash256');
+				const compositeHash = routeUtils.parseArgument(metal.restoreMetadataHash(req.params), 'compositeHash', 'hash256');
 				console.log(req.params);
-				console.log(restoreMetadataHash(req.params));
+				console.log(metal.restoreMetadataHash(req.params));
 				console.log(compositeHash);
-				return db.metadatasByCompositeHash(restoreMetadataHash(req.params))
+				return db.metadatasByCompositeHash(metal.restoreMetadataHash(req.params))
 					.then(result => {
 						console.log(result);
 					});
