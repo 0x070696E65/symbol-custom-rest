@@ -86,18 +86,12 @@ module.exports = {
 		server.get('/content/metal/:metalId', (req, res, next) => {
 			try {
 				const { metalId } = req.params;
-				return routeUtils.createSender('content').sendPlainText(res, next)(metal.restoreMetadataHash(metalId));
-				/*
 				const compositeHash = routeUtils.parseArgument(metal.restoreMetadataHash(metalId), 'compositeHash', 'hash256');
-				console.log(metalId);
-				console.log(metal.restoreMetadataHash(metalId));
-				console.log(compositeHash);
-				return db.metadatasByCompositeHash(metal.restoreMetadataHash(metalId))
+				return db.metadatasByCompositeHash(compositeHash)
 					.then(result => {
 						routeUtils.createSender('content').sendPlainText(res, next)(result);
 						console.log(result);
 					});
-				*/
 			} catch (e) {
 				res.send(errors.createInternalError('error retrieving data'));
 			}
