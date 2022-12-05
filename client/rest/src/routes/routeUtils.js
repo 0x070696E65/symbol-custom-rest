@@ -23,6 +23,7 @@ const dbFacade = require('./dbFacade');
 const routeResultTypes = require('./routeResultTypes');
 const catapult = require('../catapult-sdk/index');
 const errors = require('../server/errors');
+
 const { address } = catapult.model;
 const { buildAuditPath, indexOfLeafWithHash } = catapult.crypto.merkle;
 const { convert, uint64 } = catapult.utils;

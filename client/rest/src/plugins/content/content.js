@@ -2,13 +2,13 @@ const ContentDb = require('./ContentDb');
 const contentRoutes = require('./contentRoutes');
 
 module.exports = {
-    createDb: db => new ContentDb(db),
+	createDb: db => new ContentDb(db),
 
-    registerTransactionStates: () => {},
+	registerTransactionStates: () => {},
 
-    registerMessageChannels: () => {},
+	registerMessageChannels: () => {},
 
-    registerRoutes: (...args) => {
-        contentRoutes.register(...args);
-    }
+	registerRoutes: (...args) => {
+		contentRoutes.register(...args);
+	}
 };
