@@ -88,9 +88,12 @@ module.exports = {
 				const { metalId } = req.params;
 				console.log(metalId);
 				// const compositeHash = routeUtils.parseArgument(metal.restoreMetadataHash(metalId), 'compositeHash', 'hash256');
-				const compositeHash = metal.restoreMetadataHash(metalId);
+				const compositeHash = {
+					compositeHash: metal.restoreMetadataHash(metalId)
+				};
 				console.log(compositeHash);
-				return db.metadatasByCompositeHash(compositeHash)
+				const compositeHashes = routeUtils.parseArgument(compositeHash, 'compositeHash', 'hash256');
+				return db.metadatasByCompositeHash(compositeHashes)
 					.then(result => {
 						console.log('result');
 						console.log(result);
