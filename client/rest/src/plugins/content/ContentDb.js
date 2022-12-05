@@ -1,7 +1,7 @@
 const { buildOffsetCondition } = require('../../db/dbUtils');
 const { convertToLong } = require('../../db/dbUtils');
 const MongoDb = require('mongodb');
-
+const { getFirstChunk } = require('./metal')
 const { Long } = MongoDb;
 
 class ContentDb {
@@ -31,6 +31,16 @@ class ContentDb {
 
 	transactionsByHashes(hashes){
 		return this.catapultDb.transactionsByHashes("confirmed", hashes);
+	}
+
+	metadatasByCompositeHash(ids) {
+		const compositeHashes = ids.map(id => Buffer.from(id));
+		const conditions = { 'metadataEntry.compositeHash': { $in: compositeHashes } };
+		const collection = this.catapultDb.database.collection('metadata');
+		return collection.find(conditions)
+			.sort({ _id: -1 })
+			.toArray()
+			.then(entities => Promise.resolve(this.catapultDb.sanitizer.renameIds(entities)));
 	}
 }
 

@@ -3,7 +3,7 @@ const { convertToLong } = require('../../db/dbUtils');
 const catapult = require('../../catapult-sdk');
 const { uint64 } = catapult.utils;
 const errors = require('../../server/errors');
-
+const { restoreMetadataHash } = require('./metal')
 const is_tx = data => {
 	try {
 		let res = JSON.parse(data.buffer.toString());
@@ -68,6 +68,21 @@ module.exports = {
 				res.send(errors.createInternalError('error retrieving data'));
 			}
 			next();
-		}
-	)}
+		}),
+		server.get('/content/metal/:metalId', (req, res, next) => {
+			try{
+				const compositeHash = routeUtils.parseArgument(restoreMetadataHash(req.params), 'compositeHash', 'hash256');
+				console.log(req.params);
+				console.log(restoreMetadataHash(req.params));
+				console.log(compositeHash);
+				return db.metadatasByCompositeHash(restoreMetadataHash(req.params))
+					.then(result => {
+						console.log(result)
+					});
+			}catch(e){
+				res.send(errors.createInternalError('error retrieving data'));
+			}
+			next();
+		})
+	}
 };
