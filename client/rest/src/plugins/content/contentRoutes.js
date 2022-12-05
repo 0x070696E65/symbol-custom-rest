@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const metal = require('./metal');
+// const metal = require('./metal');
 const catapult = require('../../catapult-sdk');
 const { convertToLong } = require('../../db/dbUtils');
 // eslint-disable-next-line import/order
@@ -86,6 +86,8 @@ module.exports = {
 		server.get('/content/metal/:metalId', (req, res, next) => {
 			try {
 				const { metalId } = req.params;
+				return routeUtils.createSender('content').sendPlainText(res, next)(metalId);
+				/*
 				const compositeHash = routeUtils.parseArgument(metal.restoreMetadataHash(metalId), 'compositeHash', 'hash256');
 				console.log(metalId);
 				console.log(metal.restoreMetadataHash(metalId));
@@ -95,6 +97,7 @@ module.exports = {
 						routeUtils.createSender('content').sendPlainText(res, next)(result);
 						console.log(result);
 					});
+				*/
 			} catch (e) {
 				res.send(errors.createInternalError('error retrieving data'));
 			}
