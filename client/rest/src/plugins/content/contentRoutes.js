@@ -87,10 +87,13 @@ module.exports = {
 			try {
 				const { metalId } = req.params;
 				const compositeHash = routeUtils.parseArgument(metal.restoreMetadataHash(metalId), 'compositeHash', 'hash256');
+				console.log(metalId);
+				console.log(compositeHash);
 				return db.metadatasByCompositeHash(compositeHash)
 					.then(result => {
-						routeUtils.createSender('content').sendPlainText(res, next)(result);
+						console.log('result');
 						console.log(result);
+						routeUtils.createSender('content').sendPlainText(res, next)(result);
 					});
 			} catch (e) {
 				res.send(errors.createInternalError('error retrieving data'));

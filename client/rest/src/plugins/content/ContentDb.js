@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { buildOffsetCondition } = require('../../db/dbUtils');
 const { convertToLong } = require('../../db/dbUtils');
 // const MongoDb = require('mongodb');
@@ -36,7 +37,11 @@ class ContentDb {
 	metadatasByCompositeHash(ids) {
 		const compositeHashes = ids.map(id => Buffer.from(id));
 		const conditions = { 'metadataEntry.compositeHash': { $in: compositeHashes } };
+		console.log('conditions');
+		console.log(conditions);
 		const collection = this.catapultDb.database.collection('metadata');
+		console.log('collection');
+		console.log(collection);
 		return collection.find(conditions)
 			.sort({ _id: -1 })
 			.toArray()
