@@ -122,16 +122,19 @@ module.exports = {
 						sortField: 'id', sortDirection: 1, pageSize: 1000, pageNumber: 1
 					};
 					let s = firstscopedMetadataKey;
+					console.log(s);
 					let base64 = '';
 					let m = '';
 					do {
 						// eslint-disable-next-line no-await-in-loop
 						const d = await getMetadata(metadataEntry, s, options);
+						console.log(d[0].metadataEntry.value);
+						console.log(d[0].metadataEntry.value.buffer.toString());
 						const {
 							magic, scopedMetadataKey, value
-						} = desirializeMetadata(d[0].metadataEntry.value);
+						} = desirializeMetadata(d[0].metadataEntry.value.buffer.toString());
 						m = magic;
-						s = scopedMetadataKey;
+						s = convertToLong(scopedMetadataKey);
 						base64 += value;
 					} while ('E' !== m);
 					return base64;
