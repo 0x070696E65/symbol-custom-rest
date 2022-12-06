@@ -1,9 +1,6 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable no-console */
 const metal = require('./metal');
 const catapult = require('../../catapult-sdk');
 const { convertToLong } = require('../../db/dbUtils');
-// eslint-disable-next-line import/order
 const routeUtils = require('../../routes/routeUtils');
 
 const { uint64 } = catapult.utils;
@@ -73,7 +70,6 @@ const detectMimeType = b64 => {
 
 module.exports = {
 	register: (server, db) => {
-		// eslint-disable-next-line consistent-return
 		server.get('/content/comsa/:mosaicId', (req, res, next) => {
 			try {
 				const targetId = convertToLong(routeUtils.parseArgument(req.params, 'mosaicId', uint64.fromHex));
@@ -88,7 +84,6 @@ module.exports = {
 						const payload = [];
 						let mime = '';
 						meta.forEach(m => {
-							// eslint-disable-next-line no-shadow
 							const res = is_tx(m.metadataEntry.value);
 							if (res !== undefined)
 								hashes.push(...res);
@@ -97,15 +92,12 @@ module.exports = {
 						db.transactionsByHashes(hashes)
 							.then(txs => {
 								if (400 < txs.length)
-									// eslint-disable-next-line no-throw-literal
 									throw 'Large file is not allowed';
 								txs.forEach(agg => {
 									if (!(1 < agg.transaction.transactions.length
-										// eslint-disable-next-line max-len
 										&& null != agg.transaction.transactions[1].transaction.message?.buffer.slice(1).toString().match(/^00000#/)
 										&& 99 > agg.transaction.transactions.length)) {
 										if ('' === mime)
-											// eslint-disable-next-line max-len
 											mime = JSON.parse(agg.transaction.transactions[0].transaction.message?.buffer.slice(1).toString()).mime_type;
 										agg.transaction.transactions.slice(1).forEach(itx => {
 											payload.push(itx.transaction.message.buffer.slice(1).toString());
@@ -122,7 +114,6 @@ module.exports = {
 				res.send(errors.createInternalError('error retrieving data'));
 			}
 		});
-		// eslint-disable-next-line consistent-return
 		server.get('/content/metal/:metalId', (req, res, next) => {
 			try {
 				const getMetadata = (metadataEntry, scopedMetadataKey, options) => db.metadata(
@@ -142,7 +133,6 @@ module.exports = {
 					let base64 = '';
 					let m = '';
 					do {
-						// eslint-disable-next-line no-await-in-loop
 						const d = await getMetadata(metadataEntry, s, options);
 						const {
 							magic, scopedMetadataKey, value
@@ -154,14 +144,12 @@ module.exports = {
 					return base64;
 				};
 				const { metalId, mime } = req.params;
-				console.log(mime);
 				const compositeHash = {
 					compositeHash: metal.restoreMetadataHash(metalId)
 				};
 				const compositeHashes = [routeUtils.parseArgument(compositeHash, 'compositeHash', 'hash256')];
 				return db.metadatasByCompositeHash(compositeHashes)
 					.then(async result => {
-						console.log(result[0].metadataEntry.value);
 						const metadataEntry = new MetadataEntry(
 							result[0].metadataEntry.version,
 							result[0].metadataEntry.compositeHash,
@@ -174,12 +162,11 @@ module.exports = {
 							result[0].metadataEntry.value
 						);
 						const base64 = await fetch(metadataEntry, metadataEntry.scopedMetadataKey);
-						// eslint-disable-next-line no-underscore-dangle
 						let _mime = mime;
 						_mime = detectMimeType(base64);
 						if (_mime) {
 							routeUtils.createSender('content').sendContent(res, next)(
-								Buffer.from(base64.filter(v => v).sort(numCompare).map(r => r.split('#', 2)[1]).join(), 'base64'),
+								Buffer.from(base64, 'base64'),
 								mime
 							);
 						} else {

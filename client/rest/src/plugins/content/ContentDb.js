@@ -1,9 +1,8 @@
-/* eslint-disable no-console */
 const { buildOffsetCondition } = require('../../db/dbUtils');
 const { convertToLong } = require('../../db/dbUtils');
-// const MongoDb = require('mongodb');
+const MongoDb = require('mongodb');
 
-// const { Long } = MongoDb;
+const { Long } = MongoDb;
 
 class ContentDb {
 	constructor(db) {
