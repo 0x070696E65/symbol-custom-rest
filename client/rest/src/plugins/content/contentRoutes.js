@@ -115,30 +115,24 @@ module.exports = {
 					metadataEntry.targetId,
 					metadataEntry.metadataType,
 					options
-				).then(r => {
-					console.log(`rrr: ${r.data}`);
-					return r.data;
-				});
+				).then(r => r.data);
 
 				const fetch = async (metadataEntry, firstscopedMetadataKey) => {
 					const options = {
 						sortField: 'id', sortDirection: 1, pageSize: 1000, pageNumber: 1
 					};
 					let s = firstscopedMetadataKey;
-					console.log(s);
 					let base64 = '';
 					let m = '';
 					do {
 						// eslint-disable-next-line no-await-in-loop
 						const d = await getMetadata(metadataEntry, s, options);
-						console.log(`rrr: ${d}`);
-						console.log(d[0].metadataEntry.value);
-						console.log(d[0].metadataEntry.value.buffer.toString());
 						const {
 							magic, scopedMetadataKey, value
 						} = desirializeMetadata(d[0].metadataEntry.value.buffer.toString());
 						m = magic;
-						s = convertToLong(scopedMetadataKey);
+						s = convertToLong(uint64.fromHex(scopedMetadataKey));
+						console.log(s);
 						base64 += value;
 					} while ('E' !== m);
 					return base64;
