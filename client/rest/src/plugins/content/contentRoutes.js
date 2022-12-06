@@ -108,14 +108,17 @@ module.exports = {
 		// eslint-disable-next-line consistent-return
 		server.get('/content/metal/:metalId', (req, res, next) => {
 			try {
-				const getMetadata = async (metadataEntry, scopedMetadataKey, options) => db.metadata(
+				const getMetadata = (metadataEntry, scopedMetadataKey, options) => db.metadata(
 					metadataEntry.sourceAddress,
 					metadataEntry.targetAddress,
 					scopedMetadataKey,
 					metadataEntry.targetId,
 					metadataEntry.metadataType,
 					options
-				);
+				).then(r => {
+					console.log(`rrr: ${r.data}`);
+					return r.data;
+				});
 
 				const fetch = async (metadataEntry, firstscopedMetadataKey) => {
 					const options = {
@@ -128,6 +131,7 @@ module.exports = {
 					do {
 						// eslint-disable-next-line no-await-in-loop
 						const d = await getMetadata(metadataEntry, s, options);
+						console.log(`rrr: ${d}`);
 						console.log(d[0].metadataEntry.value);
 						console.log(d[0].metadataEntry.value.buffer.toString());
 						const {
