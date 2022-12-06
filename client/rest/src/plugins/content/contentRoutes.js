@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable no-console */
 const metal = require('./metal');
 const catapult = require('../../catapult-sdk');
@@ -53,6 +54,22 @@ const desirializeMetadata = v => ({
 	scopedMetadataKey: v.substring(8, 24),
 	value: v.substring(24)
 });
+
+const signatures = {
+	JVBERi0: 'application/pdf',
+	R0lGODdh: 'image/gif',
+	R0lGODlh: 'image/gif',
+	iVBORw0KGgo: 'image/png',
+	'/9j/': 'image/jpg'
+};
+
+const detectMimeType = b64 => {
+	for (const s in signatures) {
+		if (0 === b64.indexOf(s))
+			return signatures[s];
+	}
+	return undefined;
+};
 
 module.exports = {
 	register: (server, db) => {
@@ -132,12 +149,12 @@ module.exports = {
 						} = desirializeMetadata(d[0].metadataEntry.value.buffer.toString());
 						m = magic;
 						s = convertToLong(uint64.fromHex(scopedMetadataKey));
-						console.log(s);
 						base64 += value;
 					} while ('E' !== m);
 					return base64;
 				};
-				const { metalId } = req.params;
+				const { metalId, mime } = req.params;
+				console.log(mime);
 				const compositeHash = {
 					compositeHash: metal.restoreMetadataHash(metalId)
 				};
@@ -157,7 +174,17 @@ module.exports = {
 							result[0].metadataEntry.value
 						);
 						const base64 = await fetch(metadataEntry, metadataEntry.scopedMetadataKey);
-						routeUtils.createSender('content').sendPlainText(res, next)(base64);
+						// eslint-disable-next-line no-underscore-dangle
+						let _mime = mime;
+						_mime = detectMimeType(base64);
+						if (_mime) {
+							routeUtils.createSender('content').sendContent(res, next)(
+								Buffer.from(base64.filter(v => v).sort(numCompare).map(r => r.split('#', 2)[1]).join(), 'base64'),
+								mime
+							);
+						} else {
+							routeUtils.createSender('content').sendPlainText(res, next)(base64);
+						}
 					});
 			} catch (e) {
 				res.send(errors.createInternalError('error retrieving data'));
