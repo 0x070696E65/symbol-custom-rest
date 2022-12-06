@@ -35,6 +35,7 @@ class ContentDb {
 	}
 
 	metadatasByCompositeHash(ids) {
+		console.log('kokokoko');
 		const compositeHashes = ids.map(id => Buffer.from(id));
 		const conditions = { 'metadataEntry.compositeHash': { $in: compositeHashes } };
 		console.log('conditions');

@@ -93,7 +93,7 @@ module.exports = {
 					compositeHash: metal.restoreMetadataHash(metalId)
 				};
 				console.log(compositeHash);
-				const compositeHashes = routeUtils.parseArgument(compositeHash, 'compositeHash', 'hash256');
+				const compositeHashes = [routeUtils.parseArgument(compositeHash, 'compositeHash', 'hash256')];
 				console.log(compositeHashes);
 				// ここからこれはどう？
 				console.log(db);
