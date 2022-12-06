@@ -30,19 +30,42 @@ class ContentDb {
 		return this.catapultDb.queryPagedDocuments(conditions, [], sortConditions, 'metadata', options);
 	}
 
+	metadata(sourceAddress, targetAddress, scopedMetadataKey, targetId, metadataType, options) {
+		const sortingOptions = { id: '_id' };
+
+		let conditions = {};
+
+		const offsetCondition = buildOffsetCondition(options, sortingOptions);
+		if (offsetCondition)
+			conditions = Object.assign(conditions, offsetCondition);
+
+		if (undefined !== sourceAddress)
+			conditions['metadataEntry.sourceAddress'] = sourceAddress;
+
+		if (undefined !== targetAddress)
+			conditions['metadataEntry.targetAddress'] = targetAddress;
+
+		if (undefined !== scopedMetadataKey)
+			conditions['metadataEntry.scopedMetadataKey'] = scopedMetadataKey;
+
+		if (undefined !== targetId)
+			conditions['metadataEntry.targetId'] = targetId;
+
+		if (undefined !== metadataType)
+			conditions['metadataEntry.metadataType'] = metadataType;
+
+		const sortConditions = { [sortingOptions[options.sortField]]: options.sortDirection };
+		return this.catapultDb.queryPagedDocuments(conditions, [], sortConditions, 'metadata', options);
+	}
+
 	transactionsByHashes(hashes) {
 		return this.catapultDb.transactionsByHashes('confirmed', hashes);
 	}
 
 	metadatasByCompositeHash(ids) {
-		console.log('kokokoko');
 		const compositeHashes = ids.map(id => Buffer.from(id));
 		const conditions = { 'metadataEntry.compositeHash': { $in: compositeHashes } };
-		console.log('conditions');
-		console.log(conditions);
 		const collection = this.catapultDb.database.collection('metadata');
-		console.log('collection');
-		console.log(collection);
 		return collection.find(conditions)
 			.sort({ _id: -1 })
 			.toArray()

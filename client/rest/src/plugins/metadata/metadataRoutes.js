@@ -55,9 +55,7 @@ module.exports = {
 
 		// this endpoint is here because it is expected to support requests by block other than <current block>
 		server.get('/metadata/:compositeHash/merkle', (req, res, next) => {
-			console.log(req.params);
 			const compositeHash = routeUtils.parseArgument(req.params, 'compositeHash', 'hash256');
-			console.log(compositeHash);
 			const state = PacketType.metadataStatePath;
 			return merkleUtils.requestTree(services, state, compositeHash).then(response => {
 				res.send(response);

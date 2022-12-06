@@ -31,6 +31,29 @@ const numCompare = (a, b) => {
 
 	return comparison;
 };
+
+class MetadataEntry {
+	constructor(version, compositeHash, sourceAddress, targetAddress, scopedMetadataKey, targetId, metadataType, valueSize, value) {
+		this.version = version;
+		this.compositeHash = compositeHash;
+		this.sourceAddress = sourceAddress;
+		this.targetAddress = targetAddress;
+		this.scopedMetadataKey = scopedMetadataKey;
+		this.targetId = targetId;
+		this.metadataType = metadataType;
+		this.valueSize = valueSize;
+		this.value = value;
+	}
+}
+
+const desirializeMetadata = v => ({
+	magic: v.substring(0, 1),
+	version: v.substring(1, 4),
+	additive: v.substring(4, 8),
+	scopedMetadataKey: v.substring(8, 24),
+	value: v.substring(24)
+});
+
 module.exports = {
 	register: (server, db) => {
 		// eslint-disable-next-line consistent-return
@@ -41,7 +64,6 @@ module.exports = {
 				const options = {
 					sortField: 'id', sortDirection: 1, pageSize: 1000, pageNumber: 1
 				};
-				console.log(db);
 				return db.metadataEntry(targetId, metadataType, options)
 					.then(result => {
 						const meta = result.data;
@@ -86,25 +108,55 @@ module.exports = {
 		// eslint-disable-next-line consistent-return
 		server.get('/content/metal/:metalId', (req, res, next) => {
 			try {
+				const getMetadata = async (metadataEntry, scopedMetadataKey, options) => db.metadata(
+					metadataEntry.sourceAddress,
+					metadataEntry.targetAddress,
+					scopedMetadataKey,
+					metadataEntry.targetId,
+					metadataEntry.metadataType,
+					options
+				);
+
+				const fetch = async (metadataEntry, firstscopedMetadataKey) => {
+					const options = {
+						sortField: 'id', sortDirection: 1, pageSize: 1000, pageNumber: 1
+					};
+					let s = firstscopedMetadataKey;
+					let base64 = '';
+					let m = '';
+					do {
+						// eslint-disable-next-line no-await-in-loop
+						const d = await getMetadata(metadataEntry, s, options);
+						const {
+							magic, scopedMetadataKey, value
+						} = desirializeMetadata(d[0].metadataEntry.value);
+						m = magic;
+						s = scopedMetadataKey;
+						base64 += value;
+					} while ('E' !== m);
+					return base64;
+				};
 				const { metalId } = req.params;
-				console.log(metalId);
-				// const compositeHash = routeUtils.parseArgument(metal.restoreMetadataHash(metalId), 'compositeHash', 'hash256');
 				const compositeHash = {
 					compositeHash: metal.restoreMetadataHash(metalId)
 				};
-				console.log(compositeHash);
 				const compositeHashes = [routeUtils.parseArgument(compositeHash, 'compositeHash', 'hash256')];
-				console.log(compositeHashes);
-				// ここからこれはどう？
-				console.log(db);
-				db.metadatasByCompositeHash(compositeHashes).then(r => {
-					console.log(r);
-				});
 				return db.metadatasByCompositeHash(compositeHashes)
-					.then(result => {
-						console.log('result');
-						console.log(result);
-						routeUtils.createSender('content').sendPlainText(res, next)(result);
+					.then(async result => {
+						console.log(result[0].metadataEntry.value);
+						const metadataEntry = new MetadataEntry(
+							result[0].metadataEntry.version,
+							result[0].metadataEntry.compositeHash,
+							result[0].metadataEntry.sourceAddress,
+							result[0].metadataEntry.targetAddress,
+							result[0].metadataEntry.scopedMetadataKey,
+							result[0].metadataEntry.targetId,
+							result[0].metadataEntry.metadataType,
+							result[0].metadataEntry.valueSize,
+							result[0].metadataEntry.value
+						);
+						const base64 = await fetch(metadataEntry, metadataEntry.scopedMetadataKey);
+						routeUtils.createSender('content').sendPlainText(res, next)(base64);
 					});
 			} catch (e) {
 				res.send(errors.createInternalError('error retrieving data'));
