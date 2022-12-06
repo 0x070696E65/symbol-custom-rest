@@ -162,12 +162,15 @@ module.exports = {
 							result[0].metadataEntry.value
 						);
 						const base64 = await fetch(metadataEntry, metadataEntry.scopedMetadataKey);
-						let _mime = mime;
-						_mime = detectMimeType(base64);
+						let _mime = '';
+						if (mime)
+							_mime = mime;
+						else
+							_mime = detectMimeType(base64);
 						if (_mime) {
 							routeUtils.createSender('content').sendContent(res, next)(
 								Buffer.from(base64, 'base64'),
-								mime
+								_mime
 							);
 						} else {
 							routeUtils.createSender('content').sendPlainText(res, next)(base64);
