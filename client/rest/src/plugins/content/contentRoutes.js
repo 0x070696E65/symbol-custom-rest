@@ -188,6 +188,10 @@ module.exports = {
 					recipientAddress: params.recipientAddress ? routeUtils.parseArgument(params, 'recipientAddress', 'address') : undefined
 				};
 				const pageNumber = params.pageNumber ? Number(params.pageNumber) : 1;
+				console.log(params.pageNumber);
+				console.log(pageNumber);
+				console.log(typeof(params.pageNumber));
+				console.log(typeof(pageNumber));
 				const options = {
 					sortField: 'id', sortDirection: 1, pageSize: 1000, pageNumber
 				};
