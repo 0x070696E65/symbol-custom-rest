@@ -187,8 +187,9 @@ module.exports = {
 					signerPublicKey: params.signerPublicKey ? routeUtils.parseArgument(params, 'signerPublicKey', 'publicKey') : undefined,
 					recipientAddress: params.recipientAddress ? routeUtils.parseArgument(params, 'recipientAddress', 'address') : undefined
 				};
+				const pageNumber = params.pageNumber ? params.pageNumber : 1;
 				const options = {
-					sortField: 'id', sortDirection: 1, pageSize: 1000000, pageNumber: 1
+					sortField: 'id', sortDirection: 1, pageSize: 1000, pageNumber
 				};
 				return db.transactions("confirmed", filters, options)
 					.then(result => {
@@ -197,8 +198,11 @@ module.exports = {
 							totalFee += Number(result.data[i].transaction.maxFee);
 						}
 						const r = {
-							count: result.data.length,
-							totalFee
+							pageNumber, 
+							data:{
+								count: result.data.length,
+								totalFee,
+							}
 						};
 						routeUtils.createSender('content').sendJson(res, next)(r);
 				});
