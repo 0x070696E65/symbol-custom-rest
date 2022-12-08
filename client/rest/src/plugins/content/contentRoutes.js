@@ -180,11 +180,11 @@ module.exports = {
 				res.send(errors.createInternalError('error retrieving data'));
 			}
 		});
-		server.get('/content/:address', (req, res, next) => {
-			const { signerPublicKey } = req.params;
-
+		server.get('/content/:signerPublicKey', (req, res, next) => {
+			const { params } = req;
 			const filters = {
-				signerPublicKey: signerPublicKey ? routeUtils.parseArgument(params, 'signerPublicKey', 'publicKey') : undefined,
+				signerPublicKey: params.signerPublicKey ? routeUtils.parseArgument(params, 'signerPublicKey', 'publicKey') : undefined,
+				recipientAddress: params.recipientAddress ? routeUtils.parseArgument(params, 'recipientAddress', 'address') : undefined
 			};
 			const options = {
 				sortField: 'id', sortDirection: 1, pageSize: 1000, pageNumber: 1
