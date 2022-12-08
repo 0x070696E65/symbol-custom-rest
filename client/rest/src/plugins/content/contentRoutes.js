@@ -187,11 +187,18 @@ module.exports = {
 				recipientAddress: params.recipientAddress ? routeUtils.parseArgument(params, 'recipientAddress', 'address') : undefined
 			};
 			const options = {
-				sortField: 'id', sortDirection: 1, pageSize: 1000, pageNumber: 1
+				sortField: 'id', sortDirection: 1, pageSize: 1000000, pageNumber: 1
 			};
 			return db.transactions("confirmed", filters, options)
-				.then(result => console.log(result));
-				//.then(result => routeUtils.createSender(routeResultTypes.transaction).sendPage(res, next)(result));
+				.then(res => {
+					const totalFee = res.data.map(d => d.transaction.fee).reduce((prev, curr) => prev + curr, 0);
+					const result = {
+						count: res.data.length,
+						totalFee
+					};
+					console.log(result);
+					routeUtils.createSender('content').sendPlainText(res, next)(result);
+				});
 		});
 	}
 };
