@@ -194,7 +194,8 @@ module.exports = {
 					.then(result => {
 						let totalFee = 0;
 						for(let i = 0; i < result.data.length; i++){
-							totalFee += Number(result.data[i].transaction.fee);
+							if(i == 0) console.log(Number(result.data[i].transaction.maxFee));
+							totalFee += Number(result.data[i].transaction.maxFee);
 						}
 						const r = {
 							count: result.data.length,
