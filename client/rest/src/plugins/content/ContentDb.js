@@ -71,7 +71,9 @@ class ContentDb {
 			.then(entities => Promise.resolve(this.catapultDb.sanitizer.renameIds(entities)));
 	}
 
-	
+	transactions(group, filters, options) {
+		return this.catapultDb.transactions(group, filters, options);
+	}
 }
 
 module.exports = ContentDb;
