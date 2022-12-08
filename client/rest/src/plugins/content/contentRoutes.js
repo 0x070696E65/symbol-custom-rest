@@ -194,14 +194,12 @@ module.exports = {
 					.then(result => {
 						let totalFee = 0;
 						for(let i = 0; i < result.data.length; i++){
-							if(i == 0) console.log(Number(result.data[i].transaction.maxFee));
 							totalFee += Number(result.data[i].transaction.maxFee);
 						}
 						const r = {
 							count: result.data.length,
 							totalFee
 						};
-						console.log(r);
 						routeUtils.createSender('content').sendJson(res, next)(r);
 				});
 			} catch (e) {
