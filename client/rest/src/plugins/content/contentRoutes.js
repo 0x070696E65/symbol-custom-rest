@@ -180,5 +180,18 @@ module.exports = {
 				res.send(errors.createInternalError('error retrieving data'));
 			}
 		});
+		server.get('/content/:address', (req, res, next) => {
+			const { signerPublicKey } = req.params;
+
+			const filters = {
+				signerPublicKey: signerPublicKey ? routeUtils.parseArgument(params, 'signerPublicKey', 'publicKey') : undefined,
+			};
+			const options = {
+				sortField: 'id', sortDirection: 1, pageSize: 1000, pageNumber: 1
+			};
+			return db.transactions("confirmed", filters, options)
+				.then(result => console.log(result));
+				//.then(result => routeUtils.createSender(routeResultTypes.transaction).sendPage(res, next)(result));
+		});
 	}
 };

@@ -70,6 +70,8 @@ class ContentDb {
 			.toArray()
 			.then(entities => Promise.resolve(this.catapultDb.sanitizer.renameIds(entities)));
 	}
+
+	
 }
 
 module.exports = ContentDb;
