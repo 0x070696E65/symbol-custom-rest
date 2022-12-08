@@ -187,6 +187,8 @@ module.exports = {
 					signerPublicKey: params.signerPublicKey ? routeUtils.parseArgument(params, 'signerPublicKey', 'publicKey') : undefined,
 					recipientAddress: params.recipientAddress ? routeUtils.parseArgument(params, 'recipientAddress', 'address') : undefined
 				};
+				console.log(params);
+				console.log(req);
 				const pageNumber = params.pageNumber ? Number(params.pageNumber) : 1;
 				console.log(params.pageNumber);
 				console.log(pageNumber);
