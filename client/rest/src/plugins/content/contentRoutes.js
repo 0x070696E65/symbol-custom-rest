@@ -192,13 +192,16 @@ module.exports = {
 				};
 				return db.transactions("confirmed", filters, options)
 					.then(result => {
-						const totalFee = result.data.map(d => d.transaction.fee).reduce((prev, curr) => prev + curr, 0);
+						let totalFee = 0;
+						for(let i = 0; i < result.data.length; i++){
+							totalFee += Number(result.data[i].transaction.fee);
+						}
 						const r = {
 							count: result.data.length,
 							totalFee
 						};
 						console.log(r);
-						routeUtils.createSender('content').sendPlainText(res, next)(r);
+						routeUtils.createSender('content').sendJson(res, next)(r);
 				});
 			} catch (e) {
 				res.send(errors.createInternalError('error retrieving data'));
