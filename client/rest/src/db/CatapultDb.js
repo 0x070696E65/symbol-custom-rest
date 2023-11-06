@@ -192,7 +192,7 @@ class CatapultDb {
 	 * `pageSize` and `pageNumber`. 'sortField' must be within allowed 'sortingOptions'.
 	 * @returns {Promise.<object>} Blocks page.
 	 */
-	blocks(signerPublicKey, beneficiaryAddress, options) {
+	blocks(signerPublicKey, beneficiaryAddress, fromTimestamp, toTimestamp, options) {
 		const sortingOptions = {
 			id: '_id',
 			height: 'block.height'
@@ -209,6 +209,15 @@ class CatapultDb {
 
 		if (undefined !== beneficiaryAddress)
 			conditions['block.beneficiaryAddress'] = Buffer.from(beneficiaryAddress);
+
+		if (undefined !== fromTimestamp || undefined !== toTimestamp) {
+			conditions['block.timestamp'] = {};
+			if (undefined !== fromTimestamp)
+				conditions['block.timestamp'].$gte = convertToLong(fromTimestamp);
+
+			if (undefined !== toTimestamp)
+				conditions['block.timestamp'].$lte = convertToLong(toTimestamp);
+		}
 
 		const removeFields = ['meta.transactionMerkleTree', 'meta.statementMerkleTree'];
 
@@ -364,6 +373,15 @@ class CatapultDb {
 
 				if (undefined !== filters.toHeight)
 					conditions[heightPath].$lte = convertToLong(filters.toHeight);
+			}
+
+			if (undefined !== filters.fromTimestamp || undefined !== filters.toTimestamp) {
+				conditions['meta.timestamp'] = {};
+				if (undefined !== filters.fromTimestamp)
+					conditions['meta.timestamp'].$gte = convertToLong(filters.fromTimestamp);
+	
+				if (undefined !== filters.toTimestamp)
+					conditions['meta.timestamp'].$lte = convertToLong(filters.toTimestamp);
 			}
 
 			if (undefined !== filters.height)

@@ -66,6 +66,8 @@ module.exports = {
 				height: params.height ? routeUtils.parseArgument(params, 'height', 'uint64') : undefined,
 				fromHeight: params.fromHeight ? routeUtils.parseArgument(params, 'fromHeight', 'uint64') : undefined,
 				toHeight: params.toHeight ? routeUtils.parseArgument(params, 'toHeight', 'uint64') : undefined,
+				fromTimestamp: params.fromTimestamp ? routeUtils.parseArgument(params, 'fromTimestamp', 'uint64') : undefined,
+				toTimestamp: params.toTimestamp ? routeUtils.parseArgument(params, 'toTimestamp', 'uint64') : undefined,
 				address: params.address ? routeUtils.parseArgument(params, 'address', 'address') : undefined,
 				signerPublicKey: params.signerPublicKey ? routeUtils.parseArgument(params, 'signerPublicKey', 'publicKey') : undefined,
 				recipientAddress: params.recipientAddress ? routeUtils.parseArgument(params, 'recipientAddress', 'address') : undefined,

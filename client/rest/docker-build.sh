@@ -1,1 +1,1 @@
-docker build -t monakajp/contetntrest:latest .
+docker buildx build -t toshi70696e65/symbol_custom_rest:1.0 .
