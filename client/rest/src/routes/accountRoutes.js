@@ -55,6 +55,11 @@ module.exports = {
 				.then(sender.sendOne(req.params.accountId, res, next));
 		});
 
+		server.get('/accounts/:accountId/transactions', (req, res, next) => {
+			const [type, accountId] = routeUtils.parseArgument(req.params, 'accountId', 'accountId');
+			return db.tranasctionsByAccountId(accountId)
+		});
+
 		server.post('/accounts', (req, res, next) => {
 			if (req.params.publicKeys && req.params.addresses)
 				throw errors.createInvalidArgumentError('publicKeys and addresses cannot both be provided');

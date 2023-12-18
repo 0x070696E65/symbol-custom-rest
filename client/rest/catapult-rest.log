@@ -1,0 +1,1434 @@
+{
+  message: 'loading config from /Users/toshiya/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: 'symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: 'symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsCaCertificatePath: 'symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.crt.pem',
+    networkPropertyFilePath: 'symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: 'symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: 'symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T08:12:32.289Z'
+}
+{
+  error: Error: ENOENT: no such file or directory, open 'symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem'
+      at Object.openSync (node:fs:585:3)
+      at Object.readFileSync (node:fs:453:35)
+      at /Users/toshiya/symbol-custom-rest/client/rest/src/index.js:162:19
+      at Object.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/src/index.js:212:3)
+      at Module._compile (node:internal/modules/cjs/loader:1103:14)
+      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)
+      at Module.load (node:internal/modules/cjs/loader:981:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+      at node:internal/main/run_main_module:17:47 {
+    errno: -2,
+    syscall: 'open',
+    code: 'ENOENT',
+    path: 'symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem'
+  },
+  level: 'error',
+  message: "uncaughtException: ENOENT: no such file or directory, open 'symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem'\n" +
+    "Error: ENOENT: no such file or directory, open 'symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem'\n" +
+    '    at Object.openSync (node:fs:585:3)\n' +
+    '    at Object.readFileSync (node:fs:453:35)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/src/index.js:162:19\n' +
+    '    at Object.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/src/index.js:212:3)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  stack: "Error: ENOENT: no such file or directory, open 'symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem'\n" +
+    '    at Object.openSync (node:fs:585:3)\n' +
+    '    at Object.readFileSync (node:fs:453:35)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/src/index.js:162:19\n' +
+    '    at Object.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/src/index.js:212:3)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  exception: true,
+  date: 'Mon Dec 18 2023 10:12:32 GMT+0200 (Eastern European Standard Time)',
+  process: {
+    pid: 75640,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/toshiya/symbol-custom-rest/client/rest',
+    execPath: '/Users/toshiya/.nodebrew/node/v16.14.2/bin/node',
+    version: 'v16.14.2',
+    argv: [
+      '/Users/toshiya/.nodebrew/node/v16.14.2/bin/node',
+      '/Users/toshiya/symbol-custom-rest/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 65708032,
+      heapTotal: 35082240,
+      heapUsed: 23857096,
+      external: 24179370,
+      arrayBuffers: 18946709
+    }
+  },
+  os: {
+    loadavg: [ 15.01708984375, 13.576171875, 8.88134765625 ],
+    uptime: 3625017
+  },
+  trace: [
+    {
+      column: 3,
+      file: 'node:fs',
+      function: 'Object.openSync',
+      line: 585,
+      method: 'openSync',
+      native: false
+    },
+    {
+      column: 35,
+      file: 'node:fs',
+      function: 'Object.readFileSync',
+      line: 453,
+      method: 'readFileSync',
+      native: false
+    },
+    {
+      column: 19,
+      file: '/Users/toshiya/symbol-custom-rest/client/rest/src/index.js',
+      function: null,
+      line: 162,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: '/Users/toshiya/symbol-custom-rest/client/rest/src/index.js',
+      function: null,
+      line: 212,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1103,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1157,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 981,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 822,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 77,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 17,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2023-12-18T08:12:32.304Z'
+}
+{
+  message: 'loading config from /Users/toshiya/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsCaCertificatePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.crt.pem',
+    networkPropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T08:12:58.737Z'
+}
+{
+  error: Error: ENOENT: no such file or directory, open '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.crt.pem'
+      at Object.openSync (node:fs:585:3)
+      at Object.readFileSync (node:fs:453:35)
+      at /Users/toshiya/symbol-custom-rest/client/rest/src/index.js:164:21
+      at Object.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/src/index.js:212:3)
+      at Module._compile (node:internal/modules/cjs/loader:1103:14)
+      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)
+      at Module.load (node:internal/modules/cjs/loader:981:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+      at node:internal/main/run_main_module:17:47 {
+    errno: -2,
+    syscall: 'open',
+    code: 'ENOENT',
+    path: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.crt.pem'
+  },
+  level: 'error',
+  message: "uncaughtException: ENOENT: no such file or directory, open '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.crt.pem'\n" +
+    "Error: ENOENT: no such file or directory, open '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.crt.pem'\n" +
+    '    at Object.openSync (node:fs:585:3)\n' +
+    '    at Object.readFileSync (node:fs:453:35)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/src/index.js:164:21\n' +
+    '    at Object.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/src/index.js:212:3)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  stack: "Error: ENOENT: no such file or directory, open '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.crt.pem'\n" +
+    '    at Object.openSync (node:fs:585:3)\n' +
+    '    at Object.readFileSync (node:fs:453:35)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/src/index.js:164:21\n' +
+    '    at Object.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/src/index.js:212:3)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  exception: true,
+  date: 'Mon Dec 18 2023 10:12:58 GMT+0200 (Eastern European Standard Time)',
+  process: {
+    pid: 75681,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/toshiya/symbol-custom-rest/client/rest',
+    execPath: '/Users/toshiya/.nodebrew/node/v16.14.2/bin/node',
+    version: 'v16.14.2',
+    argv: [
+      '/Users/toshiya/.nodebrew/node/v16.14.2/bin/node',
+      '/Users/toshiya/symbol-custom-rest/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 66822144,
+      heapTotal: 35344384,
+      heapUsed: 23814320,
+      external: 24179062,
+      arrayBuffers: 18907679
+    }
+  },
+  os: {
+    loadavg: [ 14.916015625, 13.6591796875, 9.0458984375 ],
+    uptime: 3625043
+  },
+  trace: [
+    {
+      column: 3,
+      file: 'node:fs',
+      function: 'Object.openSync',
+      line: 585,
+      method: 'openSync',
+      native: false
+    },
+    {
+      column: 35,
+      file: 'node:fs',
+      function: 'Object.readFileSync',
+      line: 453,
+      method: 'readFileSync',
+      native: false
+    },
+    {
+      column: 21,
+      file: '/Users/toshiya/symbol-custom-rest/client/rest/src/index.js',
+      function: null,
+      line: 164,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: '/Users/toshiya/symbol-custom-rest/client/rest/src/index.js',
+      function: null,
+      line: 212,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1103,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1157,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 981,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 822,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 77,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 17,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2023-12-18T08:12:58.750Z'
+}
+{
+  message: 'loading config from /Users/toshiya/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.cert.pem',
+    tlsClientKeyPath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.cert.pem',
+    tlsCaCertificatePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T08:14:04.922Z'
+}
+{
+  error: Error: ENOENT: no such file or directory, open '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.cert.pem'
+      at Object.openSync (node:fs:585:3)
+      at Object.readFileSync (node:fs:453:35)
+      at /Users/toshiya/symbol-custom-rest/client/rest/src/index.js:162:19
+      at Object.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/src/index.js:212:3)
+      at Module._compile (node:internal/modules/cjs/loader:1103:14)
+      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)
+      at Module.load (node:internal/modules/cjs/loader:981:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+      at node:internal/main/run_main_module:17:47 {
+    errno: -2,
+    syscall: 'open',
+    code: 'ENOENT',
+    path: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.cert.pem'
+  },
+  level: 'error',
+  message: "uncaughtException: ENOENT: no such file or directory, open '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.cert.pem'\n" +
+    "Error: ENOENT: no such file or directory, open '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.cert.pem'\n" +
+    '    at Object.openSync (node:fs:585:3)\n' +
+    '    at Object.readFileSync (node:fs:453:35)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/src/index.js:162:19\n' +
+    '    at Object.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/src/index.js:212:3)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  stack: "Error: ENOENT: no such file or directory, open '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.cert.pem'\n" +
+    '    at Object.openSync (node:fs:585:3)\n' +
+    '    at Object.readFileSync (node:fs:453:35)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/src/index.js:162:19\n' +
+    '    at Object.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/src/index.js:212:3)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  exception: true,
+  date: 'Mon Dec 18 2023 10:14:04 GMT+0200 (Eastern European Standard Time)',
+  process: {
+    pid: 75748,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/toshiya/symbol-custom-rest/client/rest',
+    execPath: '/Users/toshiya/.nodebrew/node/v16.14.2/bin/node',
+    version: 'v16.14.2',
+    argv: [
+      '/Users/toshiya/.nodebrew/node/v16.14.2/bin/node',
+      '/Users/toshiya/symbol-custom-rest/client/rest/src/index.js'
+    ],
+    memoryUsage: {
+      rss: 66793472,
+      heapTotal: 35082240,
+      heapUsed: 23777920,
+      external: 24179062,
+      arrayBuffers: 18934210
+    }
+  },
+  os: {
+    loadavg: [ 15.4248046875, 14.0341796875, 9.5478515625 ],
+    uptime: 3625109
+  },
+  trace: [
+    {
+      column: 3,
+      file: 'node:fs',
+      function: 'Object.openSync',
+      line: 585,
+      method: 'openSync',
+      native: false
+    },
+    {
+      column: 35,
+      file: 'node:fs',
+      function: 'Object.readFileSync',
+      line: 453,
+      method: 'readFileSync',
+      native: false
+    },
+    {
+      column: 19,
+      file: '/Users/toshiya/symbol-custom-rest/client/rest/src/index.js',
+      function: null,
+      line: 162,
+      method: null,
+      native: false
+    },
+    {
+      column: 3,
+      file: '/Users/toshiya/symbol-custom-rest/client/rest/src/index.js',
+      function: null,
+      line: 212,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1103,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1157,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 981,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 822,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 77,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 17,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2023-12-18T08:14:04.929Z'
+}
+{
+  message: 'loading config from /Users/toshiya/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T08:14:48.575Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T08:14:48.622Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 500ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:14:58.642Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 1000ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:15:09.149Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 2000ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:15:20.154Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 4000ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:15:32.159Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'error',
+  message: 'rest server is exiting due to error failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:15:46.165Z'
+}
+{
+  message: 'loading config from /Users/toshiya/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T08:17:21.778Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T08:17:21.809Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 500ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:17:31.824Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 1000ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:17:42.332Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 2000ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:17:53.335Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 4000ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:18:05.346Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'error',
+  message: 'rest server is exiting due to error failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:18:19.357Z'
+}
+{
+  message: 'loading config from /Users/toshiya/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/Users/toshiya/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T08:19:39.789Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T08:19:39.823Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 500ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:19:49.839Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 1000ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:20:00.343Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 2000ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:20:11.347Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'warn',
+  message: 'db connection failed, retrying in 4000ms failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:20:23.353Z'
+}
+{
+  name: 'MongoNetworkError',
+  level: 'error',
+  message: 'rest server is exiting due to error failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]',
+  stack: 'MongoNetworkError: failed to connect to server [172.20.0.2:27017] on first connect [MongoNetworkTimeoutError: connection timed out\n' +
+    '    at connectionFailureError (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:362:14)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:16)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)\n' +
+    '    at listOnTimeout (node:internal/timers:559:17)\n' +
+    '    at processTimers (node:internal/timers:502:7)]\n' +
+    '    at Pool.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/topologies/server.js:441:11)\n' +
+    '    at Pool.emit (node:events:526:28)\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:564:14\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/pool.js:1000:11\n' +
+    '    at /Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:32:7\n' +
+    '    at callback (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:300:5)\n' +
+    '    at Socket.<anonymous> (/Users/toshiya/symbol-custom-rest/client/rest/node_modules/mongodb/lib/core/connection/connect.js:330:7)\n' +
+    '    at Object.onceWrapper (node:events:645:28)\n' +
+    '    at Socket.emit (node:events:526:28)\n' +
+    '    at Socket._onTimeout (node:net:501:8)',
+  timestamp: '2023-12-18T08:20:37.360Z'
+}

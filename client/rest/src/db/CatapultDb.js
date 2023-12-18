@@ -375,15 +375,6 @@ class CatapultDb {
 					conditions[heightPath].$lte = convertToLong(filters.toHeight);
 			}
 
-			if (undefined !== filters.fromTimestamp || undefined !== filters.toTimestamp) {
-				conditions['meta.timestamp'] = {};
-				if (undefined !== filters.fromTimestamp)
-					conditions['meta.timestamp'].$gte = convertToLong(filters.fromTimestamp);
-	
-				if (undefined !== filters.toTimestamp)
-					conditions['meta.timestamp'].$lte = convertToLong(filters.toTimestamp);
-			}
-
 			if (undefined !== filters.height)
 				conditions['meta.height'] = convertToLong(filters.height);
 
@@ -616,6 +607,21 @@ class CatapultDb {
 			.toArray()
 			.then(this.sanitizer.renameIds)
 			.then(entities => entities.map(pickTopImportance));
+	}
+
+	tranasctionsByAccountId(id) {
+		const address = catapult.model.address.publicKeyToAddress(id, this.networkId);
+		let conditions = {};
+		conditions['transaction.signerPublicKey'] = Buffer.from(id);
+		conditions['transaction.recipientAddress'] = Buffer.from(address);
+		conditions['meta.aggregateId'] = { $exists: false };
+		return this.database.collection('transactions')
+			.find(conditions)
+			.then(result => {
+				console.log(result);
+				({
+				data: result,
+			})});
 	}
 
 	// endregion
