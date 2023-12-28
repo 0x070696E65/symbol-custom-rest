@@ -611,17 +611,36 @@ class CatapultDb {
 
 	tranasctionsByAccountId(id) {
 		const address = catapult.model.address.publicKeyToAddress(id, this.networkId);
-		let conditions = {};
-		conditions['transaction.signerPublicKey'] = Buffer.from(id);
-		conditions['transaction.recipientAddress'] = Buffer.from(address);
-		conditions['meta.aggregateId'] = { $exists: false };
+		let sendConditions = {};
+		let recieveConditions = {};
+		sendConditions['transaction.signerPublicKey'] = Buffer.from(id);
+		sendConditions['meta.aggregateId'] = { $exists: false };
+
+		recieveConditions['transaction.recipientAddress'] = Buffer.from(address);
+		recieveConditions['meta.aggregateId'] = { $exists: false };
+		
 		return this.database.collection('transactions')
-			.find(conditions)
-			.then(result => {
-				console.log(result);
-				({
-				data: result,
-			})});
+		.find(sendConditions)
+		.toArray()
+		.then(async (result1) => {
+			const sendData = await this.addBlockMetaToTransactionList(result1);
+			return this.database.collection('transactions')
+				.find(recieveConditions)
+				.toArray()
+				.then(async (result2) => {
+					const recieveData = await this.addBlockMetaToTransactionList(result2);
+					return ({
+						send: {
+							count: sendData.length,
+							fees: sendData.reduce((sum, obj) => sum + obj.meta.feeMultiplier, 0)
+						},
+						recieve: {
+							count: recieveData.length,
+							fees: recieveData.reduce((sum, obj) => sum + obj.meta.feeMultiplier, 0)
+						}
+					})
+			});
+		});
 	}
 
 	// endregion

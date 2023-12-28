@@ -58,6 +58,10 @@ module.exports = {
 		server.get('/accounts/:accountId/transactions', (req, res, next) => {
 			const [type, accountId] = routeUtils.parseArgument(req.params, 'accountId', 'accountId');
 			return db.tranasctionsByAccountId(accountId)
+				.then(response => {
+					res.send(response);
+					next();
+				});
 		});
 
 		server.post('/accounts', (req, res, next) => {

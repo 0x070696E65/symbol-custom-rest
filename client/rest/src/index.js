@@ -63,7 +63,7 @@ const validateConfig = config => {
 const loadConfig = () => {
 	let configFiles = process.argv.slice(2);
 	if (0 === configFiles.length)
-		configFiles = ['../resources/rest.json'];
+		configFiles = ['/home/toshi/symbol-custom-rest/client/rest/resources/rest.json'];
 
 	let config;
 	configFiles.forEach(configFile => {

@@ -1432,3 +1432,3749 @@
     '    at Socket._onTimeout (node:net:501:8)',
   timestamp: '2023-12-18T08:20:37.360Z'
 }
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:24:17.920Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:24:17.959Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:24:17.988Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:24:17.989Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:24:17.995Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:24:18.008Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:28:20.671Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:28:23.523Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:28:23.559Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:28:23.587Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:28:23.588Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:28:23.595Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:28:23.610Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:29:16.723Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:30:26.025Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:30:26.060Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:30:26.095Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:30:26.097Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:30:26.104Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:30:26.119Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:35:47.763Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:35:51.172Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:35:52.872Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:35:55.885Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:35:56.281Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:36:23.984Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:36:24.021Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:36:24.055Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:36:24.056Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:36:24.063Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:36:24.075Z'
+}
+{
+  jse_shortmsg: 'this.database.collection(...).toArray is not a function',
+  jse_cause: TypeError: this.database.collection(...).toArray is not a function
+      at CatapultDb.tranasctionsByAccountId (/home/toshi/symbol-custom-rest/client/rest/src/db/CatapultDb.js:621:5)
+      at /home/toshi/symbol-custom-rest/client/rest/src/routes/accountRoutes.js:60:14
+      at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:199:22)
+      at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: 'caught error 500 this.database.collection(...).toArray is not a function',
+  body: {
+    code: 'Internal',
+    message: 'this.database.collection(...).toArray is not a function'
+  },
+  level: 'error',
+  stack: 'InternalError: this.database.collection(...).toArray is not a function\n' +
+    '    at Object.toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/errors.js:32:5)\n' +
+    '    at toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:38:27)\n' +
+    '    at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:207:12)\n' +
+    '    at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2023-12-18T10:36:27.468Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:36:41.126Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:37:09.414Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:37:09.462Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:37:09.501Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:37:09.502Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:37:09.510Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:37:09.525Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:39:39.035Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:39:55.826Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:39:55.876Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:39:55.909Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:39:55.911Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:39:55.917Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:39:55.932Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:42:37.794Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:42:40.295Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:42:40.332Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:42:40.370Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:42:40.372Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:42:40.379Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:42:40.393Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:43:56.483Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:43:58.585Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:43:58.614Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:43:58.647Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:43:58.648Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:43:58.654Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:43:58.666Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:45:09.713Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:45:12.123Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:45:12.165Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:45:12.199Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:45:12.200Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:45:12.208Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:45:12.222Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:47:16.358Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:47:18.287Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:47:18.320Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:47:18.355Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:47:18.356Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:47:18.363Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:47:18.376Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:47:48.392Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:47:50.217Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:47:50.253Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:47:50.289Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:47:50.290Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:47:50.297Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:47:50.311Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:48:24.913Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:48:26.792Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:48:26.829Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:48:26.863Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:48:26.864Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:48:26.871Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:48:26.884Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:57:31.828Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:57:34.505Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:57:34.544Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:57:34.577Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:57:34.578Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:57:34.584Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:57:34.597Z'
+}
+{
+  jse_shortmsg: "Cannot read property 'then' of undefined",
+  jse_cause: TypeError: Cannot read property 'then' of undefined
+      at /home/toshi/symbol-custom-rest/client/rest/src/routes/accountRoutes.js:61:5
+      at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:199:22)
+      at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: "caught error 500 Cannot read property 'then' of undefined",
+  body: {
+    code: 'Internal',
+    message: "Cannot read property 'then' of undefined"
+  },
+  level: 'error',
+  stack: "InternalError: Cannot read property 'then' of undefined\n" +
+    '    at Object.toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/errors.js:32:5)\n' +
+    '    at toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:38:27)\n' +
+    '    at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:207:12)\n' +
+    '    at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2023-12-18T10:57:36.891Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:57:53.267Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:57:55.206Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:57:55.254Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:57:55.288Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:57:55.290Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:57:55.296Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:57:55.309Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T10:58:46.154Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T10:58:48.504Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T10:58:48.545Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T10:58:48.574Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T10:58:48.576Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T10:58:48.583Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T10:58:48.597Z'
+}
+{
+  jse_shortmsg: 'signerPublicKey has an invalid format',
+  jse_cause: Error: invalid length of publicKey '112'
+      at publicKey (/home/toshi/symbol-custom-rest/client/rest/src/routes/routeUtils.js:70:9)
+      at Object.parseArgument (/home/toshi/symbol-custom-rest/client/rest/src/routes/routeUtils.js:122:73)
+      at /home/toshi/symbol-custom-rest/client/rest/src/routes/transactionRoutes.js:70:58
+      at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:199:22)
+      at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: 'caught error 409 signerPublicKey has an invalid format',
+  body: {
+    code: 'InvalidArgument',
+    message: 'signerPublicKey has an invalid format'
+  },
+  level: 'error',
+  stack: 'InvalidArgumentError: signerPublicKey has an invalid format\n' +
+    '    at Object.createInvalidArgumentError (/home/toshi/symbol-custom-rest/client/rest/src/server/errors.js:48:5)\n' +
+    '    at Object.parseArgument (/home/toshi/symbol-custom-rest/client/rest/src/routes/routeUtils.js:124:17)\n' +
+    '    at /home/toshi/symbol-custom-rest/client/rest/src/routes/transactionRoutes.js:70:58\n' +
+    '    at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:199:22)\n' +
+    '    at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2023-12-18T10:59:27.442Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:00:37.113Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:00:39.183Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:00:39.228Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:00:39.262Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:00:39.264Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:00:39.270Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:00:39.284Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:01:09.517Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:01:12.182Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:01:12.216Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:01:12.250Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:01:12.251Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:01:12.257Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:01:12.269Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:01:45.334Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:01:47.481Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:01:47.522Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:01:47.555Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:01:47.557Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:01:47.564Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:01:47.578Z'
+}
+{
+  jse_shortmsg: 'db.tranasctionsByAccountId(...).then is not a function',
+  jse_cause: TypeError: db.tranasctionsByAccountId(...).then is not a function
+      at /home/toshi/symbol-custom-rest/client/rest/src/routes/accountRoutes.js:61:6
+      at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:199:22)
+      at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: 'caught error 500 db.tranasctionsByAccountId(...).then is not a function',
+  body: {
+    code: 'Internal',
+    message: 'db.tranasctionsByAccountId(...).then is not a function'
+  },
+  level: 'error',
+  stack: 'InternalError: db.tranasctionsByAccountId(...).then is not a function\n' +
+    '    at Object.toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/errors.js:32:5)\n' +
+    '    at toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:38:27)\n' +
+    '    at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:207:12)\n' +
+    '    at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2023-12-18T11:01:48.907Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:02:23.125Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:02:25.507Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:02:25.543Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:02:25.576Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:02:25.577Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:02:25.583Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:02:25.596Z'
+}
+{
+  jse_shortmsg: 'db.tranasctionsByAccountId(...).then is not a function',
+  jse_cause: TypeError: db.tranasctionsByAccountId(...).then is not a function
+      at /home/toshi/symbol-custom-rest/client/rest/src/routes/accountRoutes.js:61:6
+      at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:199:22)
+      at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: 'caught error 500 db.tranasctionsByAccountId(...).then is not a function',
+  body: {
+    code: 'Internal',
+    message: 'db.tranasctionsByAccountId(...).then is not a function'
+  },
+  level: 'error',
+  stack: 'InternalError: db.tranasctionsByAccountId(...).then is not a function\n' +
+    '    at Object.toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/errors.js:32:5)\n' +
+    '    at toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:38:27)\n' +
+    '    at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:207:12)\n' +
+    '    at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2023-12-18T11:02:27.741Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:03:26.767Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:03:29.042Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:03:29.084Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:03:29.122Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:03:29.123Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:03:29.130Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:03:29.146Z'
+}
+{
+  jse_shortmsg: 'db.tranasctionsByAccountId(...).then is not a function',
+  jse_cause: TypeError: db.tranasctionsByAccountId(...).then is not a function
+      at /home/toshi/symbol-custom-rest/client/rest/src/routes/accountRoutes.js:61:6
+      at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:199:22)
+      at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: 'caught error 500 db.tranasctionsByAccountId(...).then is not a function',
+  body: {
+    code: 'Internal',
+    message: 'db.tranasctionsByAccountId(...).then is not a function'
+  },
+  level: 'error',
+  stack: 'InternalError: db.tranasctionsByAccountId(...).then is not a function\n' +
+    '    at Object.toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/errors.js:32:5)\n' +
+    '    at toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:38:27)\n' +
+    '    at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:207:12)\n' +
+    '    at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2023-12-18T11:03:31.164Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:03:54.664Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:03:56.630Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:03:56.668Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:03:56.703Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:03:56.705Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:03:56.713Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:03:56.727Z'
+}
+{
+  jse_shortmsg: 'db.tranasctionsByAccountId(...).then is not a function',
+  jse_cause: TypeError: db.tranasctionsByAccountId(...).then is not a function
+      at /home/toshi/symbol-custom-rest/client/rest/src/routes/accountRoutes.js:61:6
+      at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:199:22)
+      at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: 'caught error 500 db.tranasctionsByAccountId(...).then is not a function',
+  body: {
+    code: 'Internal',
+    message: 'db.tranasctionsByAccountId(...).then is not a function'
+  },
+  level: 'error',
+  stack: 'InternalError: db.tranasctionsByAccountId(...).then is not a function\n' +
+    '    at Object.toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/errors.js:32:5)\n' +
+    '    at toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:38:27)\n' +
+    '    at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:207:12)\n' +
+    '    at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2023-12-18T11:03:58.748Z'
+}
+{
+  jse_shortmsg: 'db.tranasctionsByAccountId(...).then is not a function',
+  jse_cause: TypeError: db.tranasctionsByAccountId(...).then is not a function
+      at /home/toshi/symbol-custom-rest/client/rest/src/routes/accountRoutes.js:61:6
+      at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:199:22)
+      at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: 'caught error 500 db.tranasctionsByAccountId(...).then is not a function',
+  body: {
+    code: 'Internal',
+    message: 'db.tranasctionsByAccountId(...).then is not a function'
+  },
+  level: 'error',
+  stack: 'InternalError: db.tranasctionsByAccountId(...).then is not a function\n' +
+    '    at Object.toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/errors.js:32:5)\n' +
+    '    at toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:38:27)\n' +
+    '    at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:207:12)\n' +
+    '    at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2023-12-18T11:04:05.511Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:04:24.048Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:04:26.655Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:04:26.690Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:04:26.721Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:04:26.723Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:04:26.730Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:04:26.743Z'
+}
+{
+  jse_shortmsg: 'db.tranasctionsByAccountId(...).then is not a function',
+  jse_cause: TypeError: db.tranasctionsByAccountId(...).then is not a function
+      at /home/toshi/symbol-custom-rest/client/rest/src/routes/accountRoutes.js:61:6
+      at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:199:22)
+      at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)
+      at processTicksAndRejections (node:internal/process/task_queues:78:11),
+  jse_info: {},
+  message: 'caught error 500 db.tranasctionsByAccountId(...).then is not a function',
+  body: {
+    code: 'Internal',
+    message: 'db.tranasctionsByAccountId(...).then is not a function'
+  },
+  level: 'error',
+  stack: 'InternalError: db.tranasctionsByAccountId(...).then is not a function\n' +
+    '    at Object.toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/errors.js:32:5)\n' +
+    '    at toRestError (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:38:27)\n' +
+    '    at promiseAwareHandler (/home/toshi/symbol-custom-rest/client/rest/src/server/bootstrapper.js:207:12)\n' +
+    '    at nextTick (/home/toshi/symbol-custom-rest/client/rest/node_modules/restify/lib/chain.js:167:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:78:11)',
+  timestamp: '2023-12-18T11:04:28.529Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:07:16.792Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:07:19.345Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:07:19.383Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:07:19.416Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:07:19.417Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:07:19.424Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:07:19.437Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:08:10.883Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:08:12.846Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:08:12.884Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:08:12.916Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:08:12.918Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:08:12.925Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:08:12.940Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:10:39.900Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:10:42.058Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:10:42.095Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:10:42.127Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:10:42.128Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:10:42.135Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:10:42.147Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:11:06.997Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:11:09.217Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:11:09.255Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:11:09.299Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:11:09.301Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:11:09.307Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:11:09.321Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:12:27.056Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:12:28.874Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:12:28.907Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:12:28.950Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:12:28.952Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:12:28.960Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:12:28.974Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:12:41.763Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:12:43.567Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:12:43.604Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:12:43.638Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:12:43.640Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:12:43.646Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:12:43.659Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:13:45.035Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:13:46.888Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:13:46.923Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:13:46.955Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:13:46.957Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:13:46.963Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:13:46.974Z'
+}
+{
+  message: 'SIGINT detected, shutting down rest server',
+  level: 'info',
+  timestamp: '2023-12-18T11:14:03.087Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-18T11:14:04.894Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-18T11:14:04.931Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-18T11:14:04.963Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-18T11:14:04.964Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-18T11:14:04.970Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-18T11:14:04.983Z'
+}
+{
+  message: 'loading config from /home/toshi/symbol-custom-rest/client/rest/resources/rest.json',
+  level: 'info'
+}
+{
+  network: { name: 'testnet', description: 'catapult public test network' },
+  port: 3030,
+  protocol: 'HTTP',
+  sslKeyPath: '',
+  sslCertificatePath: '',
+  crossDomain: {
+    allowedHosts: [ '*' ],
+    allowedMethods: [ 'GET', 'POST', 'PUT', 'OPTIONS' ]
+  },
+  uncirculatingAccountPublicKeys: [
+    'A4739036FD7EFED2750A51EE9D1D3113BA3F9849E0889213CED7F221B2AA1A20',
+    '2BF1E1F3072E3BE0CD851E4741E101E33DB19C163895F69AA890E7CF177C878C'
+  ],
+  extensions: [
+    'accountLink', 'aggregate',
+    'lockHash',    'lockSecret',
+    'mosaic',      'metadata',
+    'multisig',    'namespace',
+    'receipts',    'restrictions',
+    'content'
+  ],
+  db: {
+    url: 'mongodb://172.20.0.2:27017/',
+    name: 'catapult',
+    pageSizeMin: 10,
+    pageSizeMax: 100,
+    pageSizeDefault: 20,
+    maxConnectionAttempts: 5,
+    baseRetryDelay: 500,
+    connectionPoolSize: 10
+  },
+  apiNode: {
+    host: '127.0.0.1',
+    port: 7900,
+    timeout: 1000,
+    tlsClientCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.crt.pem',
+    tlsClientKeyPath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/node.key.pem',
+    tlsCaCertificatePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/cert/ca.cert.pem',
+    networkPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-network.properties',
+    nodePropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-node.properties',
+    inflationPropertyFilePath: '/home/toshi/symbol-custom-rest/client/rest/resources/api-node-config/config-inflation.properties'
+  },
+  websocket: {
+    mq: {
+      host: '127.0.0.1',
+      port: 7902,
+      monitorInterval: 500,
+      connectTimeout: 10000,
+      monitorLoggingThrottle: 60000,
+      maxSubscriptions: 500
+    },
+    allowOptionalAddress: true
+  },
+  throttling: { burst: 20, rate: 5 },
+  logging: {
+    console: {
+      formats: [ 'colorize', 'simple' ],
+      level: 'verbose',
+      handleExceptions: true
+    },
+    file: {
+      formats: [ 'prettyPrint' ],
+      level: 'verbose',
+      handleExceptions: true,
+      filename: 'catapult-rest.log',
+      maxsize: 20971520,
+      maxFiles: 100
+    }
+  },
+  numBlocksTransactionFeeStats: 300,
+  deployment: {
+    deploymentTool: '',
+    deploymentToolVersion: '',
+    lastUpdatedDate: ''
+  },
+  level: 'verbose',
+  message: 'finished loading rest server config',
+  timestamp: '2023-12-28T10:37:40.465Z'
+}
+{
+  message: 'connecting to mongodb://172.20.0.2:27017/ (database:catapult)',
+  level: 'info',
+  timestamp: '2023-12-28T10:37:40.526Z'
+}
+{
+  message: 'connected to mongo at mongodb://172.20.0.2:27017/catapult',
+  level: 'verbose',
+  timestamp: '2023-12-28T10:37:40.558Z'
+}
+{
+  message: 'registering routes',
+  level: 'info',
+  timestamp: '2023-12-28T10:37:40.559Z'
+}
+{
+  message: 'Using protocol: HTTP',
+  level: 'info',
+  timestamp: '2023-12-28T10:37:40.566Z'
+}
+{
+  message: 'listening on port 3030',
+  level: 'info',
+  timestamp: '2023-12-28T10:37:40.579Z'
+}
